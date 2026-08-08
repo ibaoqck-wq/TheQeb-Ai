@@ -1,67 +1,67 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThaQeb-AI | ثاقب - محرك الفحص التنظيمي</title>
+    <title>ThaQeb-AI | Federal Regulatory Inspection Engine</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- الهيدر الرئيسي -->
+        <!-- Main Header -->
         <header>
-            <h1>🛡️ ThaQeb-AI Engine | ثاقب - الفيدرالي</h1>
-            <p>المنصة الوطنية للتحقق التنظيمي وتدقيق معايير الذكاء الاصطناعي في القطاع المصرفي (SAMA / SDAIA / ITU-T Y.3172)</p>
+            <h1>🛡️ ThaQeb-AI Engine</h1>
+            <p>National Platform for Regulatory Compliance & AI Standards Audit in Banking (SAMA / SDAIA PDPL / ITU-T Y.3172)</p>
         </header>
 
         <main>
-            <!-- شاشة 1: اختيار حالة الاستخدام -->
+            <!-- Panel 1: Use Case Selection -->
             <section class="panel">
-                <h2>1. اختيار حالة الاستخدام (Use Case Input)</h2>
+                <h2>1. Use Case Input Selection</h2>
                 <div class="form-group">
-                    <label for="scenarioSelect">اختر السيناريو المطلوب فحصه أمام لجنة التحكيم (Demo Mode):</label>
+                    <label for="scenarioSelect">Select Deployment Scenario for Inspection:</label>
                     <select id="scenarioSelect">
-                        <option value="">-- اختر سيناريو لعرض الـ Demo --</option>
-                        <option value="scenario1">السيناريو 1: نظام فيدرالي بين بنكين (أ و ب) عبر نظام "سريع"</option>
-                        <option value="scenario2">السيناريو 2: نظام فيدرالي بين 4 بنوك مع انقطاع الشبكة</option>
-                        <option value="scenario3">السيناريو 3: نقل الأوزان بدون تشفير تفاضلي (DP Risk)</option>
+                        <option value="">-- Select Scenario --</option>
+                        <option value="scenario1">Scenario 1: Cross-Bank Federated System via "SARIE" System</option>
+                        <option value="scenario2">Scenario 2: Multi-Bank Federated Learning with Network Dropout</option>
+                        <option value="scenario3">Scenario 3: Parameter Transmission without Differential Privacy (DP Risk)</option>
                     </select>
                 </div>
-                <button id="startBtn" class="btn-primary" type="button">🚀 بدء فحص التوافق والامتثال</button>
+                <button id="startBtn" class="btn-primary" type="button">🚀 Run Compliance & Regulatory Audit</button>
             </section>
 
-            <!-- شاشة موجه البرمجة والتحميل التفاعلي -->
+            <!-- Interactive Console Console -->
             <div id="loader" class="panel" style="display:none;">
-                <h2>⚡ جاري استدعاء قاعدة المعرفة ومطابقة المعمارية (RAG Processing)</h2>
+                <h2>⚡ Knowledge Base Query & Architecture Matching (RAG Engine)</h2>
                 <div id="consoleLogs" class="console-box"></div>
             </div>
 
-            <!-- شاشة 2 و 3: تقرير الفحص والنتائج -->
+            <!-- Panel 2 & 3: Inspection Report & Findings -->
             <section id="reportArea" class="panel" style="display:none;">
-                <h2>📊 تقرير الفحص الشامل (Inspection Report)</h2>
+                <h2>📊 Comprehensive Inspection Report</h2>
                 
-                <!-- مقاييس التوافق -->
+                <!-- Compliance Score Metrics -->
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <h3>التوافق مع SAMA</h3>
+                        <h3>SAMA Alignment</h3>
                         <span id="samaScore" class="score">0%</span>
                     </div>
                     <div class="metric-card">
-                        <h3>التوافق مع PDPL (سدايا)</h3>
+                        <h3>SDAIA PDPL Compliance</h3>
                         <span id="pdplScore" class="score">0%</span>
                     </div>
                     <div class="metric-card">
-                        <h3>التوافق مع ITU-T Y.3172</h3>
+                        <h3>ITU-T Y.3172 Score</h3>
                         <span id="ituScore" class="score">0%</span>
                     </div>
                 </div>
 
-                <!-- قائمة الثغرات والتوصيات -->
-                <h3>⚠️ الثغرات التنظيمية والتقنية المكتشفة (Policy & Technical Gaps)</h3>
+                <!-- Identified Gaps & Recommendations -->
+                <h3>⚠️ Identified Policy & Technical Gaps</h3>
                 <div id="findingsList"></div>
 
-                <!-- مصفوفة مطابقة معيار Y.3172 -->
-                <h3 style="margin-top: 35px;">📐 مصفوفة المطابقة الهيكلية مع معيار ITU-T Y.3172</h3>
+                <!-- Structural Mapping Matrix -->
+                <h3 style="margin-top: 35px;">📐 Structural Mapping Matrix (ITU-T Y.3172 Architecture)</h3>
                 <div style="overflow-x: auto;">
                     <table class="y3172-table">
                         <thead>
@@ -86,9 +86,9 @@
                                 <td>No Raw PII Extraction Allowed</td>
                             </tr>
                             <tr>
-                                <td>Noise Injection</td>
+                                <td>Noise Injection Engine</td>
                                 <td><span class="badge badge-pp">PP</span></td>
-                                <td>Differential Privacy Engine</td>
+                                <td>Differential Privacy Module</td>
                                 <td>Guarantees Zero Leakage via DP-SGD</td>
                             </tr>
                             <tr>
@@ -98,31 +98,37 @@
                                 <td>Secure Local Gradient Generation</td>
                             </tr>
                             <tr>
-                                <td>Policy Enforcement</td>
+                                <td>Policy Enforcement Gate</td>
                                 <td><span class="badge badge-p">P</span></td>
                                 <td>SAMA Compliance Gatekeeper</td>
-                                <td>Blocks illegal parameter broadcasts</td>
+                                <td>Blocks Illegal Parameter Broadcasts</td>
                             </tr>
                             <tr>
                                 <td>ML Orchestrator</td>
                                 <td><span class="badge badge-fo">ML-FO</span></td>
                                 <td>Central Federated Aggregator</td>
-                                <td>Runs inside SAMA Sandbox environment</td>
+                                <td>Runs inside SAMA Sandbox Environment</td>
                             </tr>
                             <tr>
-                                <td>ML Sandbox</td>
+                                <td>ML Sandbox Node</td>
                                 <td><span class="badge badge-sb">ML-SB</span></td>
                                 <td>Isolated Testing Node</td>
-                                <td>Simulates network dropouts and noise</td>
+                                <td>Simulates Network Dropouts & Noise</td>
                             </tr>
                             <tr>
-                                <td>Model Sink / Action</td>
+                                <td>Model Sink / Action Engine</td>
                                 <td><span class="badge badge-sink">SINK</span></td>
                                 <td>Alerts & Decision Engine</td>
                                 <td>Enforces Human-in-the-Loop (SAMA Art 15)</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <!-- Overall Executive Recommendation Summary -->
+                <div class="executive-summary">
+                    <h3>📌 Overall Executive Recommendation Summary</h3>
+                    <p id="execSummaryText">Pending audit execution...</p>
                 </div>
             </section>
         </main>

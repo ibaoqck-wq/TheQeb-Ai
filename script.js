@@ -1,84 +1,87 @@
 const scenarios = {
     scenario1: {
-        title: "السيناريو 1: نظام فيدرالي بين بنكين عبر 'سريع'",
+        title: "Scenario 1: Cross-Bank Federated System via SARIE",
         samaTarget: 88,
         pdplTarget: 90,
         ituTarget: 85,
         consoleLogs: [
-            "> [RAG Query] Retrieving SAMA AML Circular Art 15...",
-            "> [Vector Search] Matching SDAIA PDPL Privacy Constraints...",
-            "> [ITU-T Y.3172] Parsing ML-Pipeline Topology (SRC -> PP -> FO -> SINK)...",
-            "> [Policy Engine] Flagging Automated Freeze Action Violation...",
-            "> [Report Generation] Finalizing Compliance Score..."
+            "> [RAG Query] Retrieving SAMA Framework Art 15 (Human Oversight)...",
+            "> [Vector Search] Matching SDAIA PDPL Data Protection Rules...",
+            "> [ITU-T Y.3172] Validating Pipeline Topology (SRC -> PP -> FO -> SINK)...",
+            "> [Policy Engine] Flagging Automated Account Freeze Violation...",
+            "> [Report Generation] Compiling Final Executive Audit Report..."
         ],
         findings: [
             {
-                title: "ثغرة تجميد الحسابات الآلي (SAMA AML Gap)",
+                title: "Automated Account Freeze Risk (SAMA AML Regulation Gap)",
                 type: "error",
-                desc: "النظام يتخذ قرار تجميد الحسابات تلقائياً عند اكتشاف الشبهة دون اعتماد من مسؤول الامتثال البشري.",
-                recommendation: "تعديل مخرجات الـ SINK لتصبح تنبيهاً لمسؤول الامتثال البشري وفق المادة 15 من لائحة SAMA."
+                desc: "The system triggers account suspension automatically upon anomaly detection without mandatory clearance from a certified compliance officer.",
+                recommendation: "Reconfigure SINK output to emit an alert to a human compliance officer in adherence to SAMA Circular Article 15."
             },
             {
-                title: "توافق الخصوصية (SDAIA PDPL Alignment)",
+                title: "Privacy & Encryption Alignment (SDAIA PDPL Compliant)",
                 type: "success",
-                desc: "يتم استخدام التشفير التفاضلي (Differential Privacy) بنجاح لتشويش الأوزان ومنع عكس البيانات.",
-                recommendation: "مطابق لمعايير ضوابط سدايا لحماية البيانات المالية الحساسة."
+                desc: "Differential Privacy (DP-SGD) is properly integrated at local nodes to obscure weight gradients prior to central aggregation.",
+                recommendation: "Maintain current differential noise configuration to meet national data sovereignty standards."
             }
-        ]
+        ],
+        executiveSummary: "The overall architecture demonstrates robust compliance with SDAIA PDPL privacy standards. However, production deployment requires remediating the automated action engine (SINK) by enforcing Human-in-the-Loop intervention prior to executing restrictive financial actions under SAMA regulations."
     },
     scenario2: {
-        title: "السيناريو 2: تعلم فيدرالي بين 4 بنوك مع انقطاع الشبكة",
+        title: "Scenario 2: Multi-Bank Federated Learning with Network Dropout",
         samaTarget: 75,
         pdplTarget: 85,
         ituTarget: 60,
         consoleLogs: [
-            "> [Network Stress Test] Simulating Node 3 Dropout...",
-            "> [Orchestration Check] Testing Central Aggregator Asynchronous Tolerance...",
-            "> [ITU-T Y.3172] Validating Dynamic Orchestration Layer (ML-FO)...",
-            "> [Warning] Aggregator Stall Detected during Dropout Phase.",
-            "> [Report Generation] Score Calculation Complete."
+            "> [Network Stress Test] Simulating Node 3 Connection Failure...",
+            "> [Orchestration Check] Verifying Central Aggregator Tolerance...",
+            "> [ITU-T Y.3172] Auditing Dynamic Orchestration Layer (ML-FO)...",
+            "> [Warning] Global Model Stall Detected during Node Dropout.",
+            "> [Report Generation] Finalizing Readiness Score..."
         ],
         findings: [
             {
-                title: "ثغرة انقطاع الاتصال بالعقدة المركزية (ITU-T Y.3172 Dynamic Orchestration)",
+                title: "Central Aggregator Stall Gap (ITU-T Y.3172 Orchestration Failure)",
                 type: "error",
-                desc: "عند انقطاع بنك واحد، يفشل محرك التجميع (Central Aggregator) في استكمال الجولة التدريبية.",
-                recommendation: "تفعيل خوارزمية asynchronous weight update لضمان مرونة التدريب التشاركي."
+                desc: "When an individual bank node drops offline, the central ML-FO aggregator halts global round updates.",
+                recommendation: "Implement asynchronous weight update mechanisms to guarantee federated training resilience."
             },
             {
-                title: "جاهزية الامتثال التشغيلي (Operational Readiness)",
+                title: "Operational Log Readiness (SAMA Audit Trail)",
                 type: "success",
-                desc: "استيفاء شروط الحفاظ على موثوقية السجلات المالية وتوزع العقد المصرفية.",
-                recommendation: "الاستمرار في مراقبة زمن الاستجابة في البيئة التجريبية SAMA Sandbox."
+                desc: "Distributed ledger logs satisfy requirements for record integrity and transaction traceability.",
+                recommendation: "Continue telemetry monitoring within the SAMA Regulatory Sandbox."
             }
-        ]
+        ],
+        executiveSummary: "While data protection mechanisms are fully functional, network fault-tolerance requires strengthening. The system must adopt an asynchronous aggregation strategy within the ML-FO orchestration layer before expanding to additional participating banks."
     },
     scenario3: {
-        title: "السيناريو 3: ثغرة نقل الأوزان بدون تشفير تفاضلي (DP Risk)",
+        title: "Scenario 3: Parameter Transmission without Differential Privacy",
         samaTarget: 60,
         pdplTarget: 40,
         ituTarget: 50,
         consoleLogs: [
-            "> [Privacy Analysis] Scanning Gradient Vectors for PII Inversion Risks...",
-            "> [SDAIA PDPL Check] Section 4 Breach Detected: Raw Gradient Transmission.",
-            "> [Threat Model] Model Inversion Attack Simulation Executed.",
-            "> [Alert] High Privacy Exposure on Inter-Bank Channel.",
-            "> [Report Generation] Critical Vulnerability Status Emitted."
+            "> [Privacy Analysis] Auditing Gradient Vectors for Reconstruction Vulnerabilities...",
+            "> [SDAIA PDPL Check] Critical Breach: Unmasked Parameter Broadcast Detected.",
+            "> [Threat Model] Model Inversion Simulation Triggered.",
+            "> [High Severity Alert] Financial Transaction Leakage Vulnerability Identified.",
+            "> [Report Generation] Generating Non-Compliance Audit Summary..."
         ],
         findings: [
             {
-                title: "خطر استرجاع البيانات الحساسة (Model Inversion Attack)",
+                title: "Model Inversion Vulnerability (High Privacy Risk)",
                 type: "error",
-                desc: "نقل أوزان الخوارزميات بدون إضافة ضوضاء (Noise Injection) يتيح فك تشفير المعاملات المالية للعملاء.",
-                recommendation: "تطبيق معيار DP-SGD عند كل عقدة مصرفية (PP Node) قبل إرسال التحديثات."
+                desc: "Broadcasting unmasked parameter updates allows adversarial nodes to reverse-engineer client transactions.",
+                recommendation: "Enforce local DP-SGD noise injection engines (PP Node) on all participating banking nodes."
             },
             {
-                title: "مخالفة نظام حماية البيانات الشخصية (PDPL Non-Compliance)",
+                title: "PDPL Article 4 Violation (Unprotected PII Derivation)",
                 type: "error",
-                desc: "إمكانية الاستدلال على هوية المتعاملين الماليين من خلال المتجهات الخام.",
-                recommendation: "إيقاف خوادم التجميع لحين دمج طبقة التشويش التفاضلي المعتمدة."
+                desc: "Raw vector outputs allow inferring customer identities from model updates.",
+                recommendation: "Halt aggregation servers immediately until differential privacy modules are active."
             }
-        ]
+        ],
+        executiveSummary: "CRITICAL NON-COMPLIANCE: The current architecture presents severe data exposure risks under SDAIA PDPL regulations. Deployment must be restricted until DP-SGD noise injection modules are activated across all local banking nodes."
     }
 };
 
@@ -109,18 +112,16 @@ function runInspection() {
     const consoleBox = document.getElementById("consoleLogs");
 
     if (!selectedScenarioKey) {
-        alert("يرجى اختيار سيناريو للفحص أولاً من القائمة!");
+        alert("Please select a scenario to initiate inspection!");
         return;
     }
 
     const data = scenarios[selectedScenarioKey];
     
-    // إعادة ضبط الواجهة
     if (loader) loader.style.display = "block";
     if (reportArea) reportArea.style.display = "none";
     if (consoleBox) consoleBox.innerHTML = "";
 
-    // إظهار أسطر البرمجة التفاعلية لحظياً
     data.consoleLogs.forEach((log, index) => {
         setTimeout(() => {
             const line = document.createElement("div");
@@ -128,10 +129,9 @@ function runInspection() {
             line.innerText = log;
             consoleBox.appendChild(line);
             consoleBox.scrollTop = consoleBox.scrollHeight;
-        }, index * 300);
+        }, index * 250);
     });
 
-    // إظهار التقرير النهائي بعد انتهاء المحاكاة
     setTimeout(() => {
         if (loader) loader.style.display = "none";
         if (reportArea) reportArea.style.display = "block";
@@ -145,11 +145,12 @@ function runInspection() {
             findingsHTML += `
                 <div class="card ${f.type === 'error' ? 'card-error' : 'card-success'}">
                     <h4>${f.title}</h4>
-                    <p><strong>المشكلة/التوصيف:</strong> ${f.desc}</p>
-                    <p class="rec"><strong>التوصية:</strong> ${f.recommendation}</p>
+                    <p><strong>Description:</strong> ${f.desc}</p>
+                    <p class="rec"><strong>Action Recommendation:</strong> ${f.recommendation}</p>
                 </div>
             `;
         });
         document.getElementById("findingsList").innerHTML = findingsHTML;
-    }, data.consoleLogs.length * 300 + 400);
+        document.getElementById("execSummaryText").innerText = data.executiveSummary;
+    }, data.consoleLogs.length * 250 + 300);
 }
