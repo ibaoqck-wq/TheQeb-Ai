@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThaQeb-AI | ثاقب - محرك الفحص التنظيمي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- الهيدر الرئيسي -->
+        <header>
+            <h1>🛡️ ThaQeb-AI Engine | ثاقب - الفيدرالي</h1>
+            <p>المنصة الوطنية للتحقق التنظيمي وتدقيق معايير الذكاء الاصطناعي في القطاع المصرفي (SAMA / SDAIA / ITU-T Y.3172)</p>
+        </header>
+
+        <main>
+            <!-- شاشة 1: اختيار حالة الاستخدام -->
+            <section class="panel">
+                <h2>1. اختيار حالة الاستخدام (Use Case Input)</h2>
+                <div class="form-group">
+                    <label for="scenarioSelect">اختر السيناريو المطلوب فحصه أمام لجنة التحكيم (Demo Mode):</label>
+                    <select id="scenarioSelect">
+                        <option value="">-- اختر سيناريو لعرض الـ Demo --</option>
+                        <option value="scenario1">السيناريو 1: نظام فيدرالي بين بنكين (أ و ب) عبر نظام "سريع"</option>
+                        <option value="scenario2">السيناريو 2: نظام فيدرالي بين 4 بنوك مع انقطاع الشبكة</option>
+                        <option value="scenario3">السيناريو 3: نقل الأوزان بدون تشفير تفاضلي (DP Risk)</option>
+                    </select>
+                </div>
+                <button id="startBtn" class="btn-primary" type="button">🚀 بدء فحص التوافق والامتثال</button>
+            </section>
+
+            <!-- شاشة موجه البرمجة والتحميل التفاعلي -->
+            <div id="loader" class="panel" style="display:none;">
+                <h2>⚡ جاري استدعاء قاعدة المعرفة ومطابقة المعمارية (RAG Processing)</h2>
+                <div id="consoleLogs" class="console-box"></div>
+            </div>
+
+            <!-- شاشة 2 و 3: تقرير الفحص والنتائج -->
+            <section id="reportArea" class="panel" style="display:none;">
+                <h2>📊 تقرير الفحص الشامل (Inspection Report)</h2>
+                
+                <!-- مقاييس التوافق -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>التوافق مع SAMA</h3>
+                        <span id="samaScore" class="score">0%</span>
+                    </div>
+                    <div class="metric-card">
+                        <h3>التوافق مع PDPL (سدايا)</h3>
+                        <span id="pdplScore" class="score">0%</span>
+                    </div>
+                    <div class="metric-card">
+                        <h3>التوافق مع ITU-T Y.3172</h3>
+                        <span id="ituScore" class="score">0%</span>
+                    </div>
+                </div>
+
+                <!-- قائمة الثغرات والتوصيات -->
+                <h3>⚠️ الثغرات التنظيمية والتقنية المكتشفة (Policy & Technical Gaps)</h3>
+                <div id="findingsList"></div>
+
+                <!-- مصفوفة مطابقة معيار Y.3172 -->
+                <h3 style="margin-top: 35px;">📐 مصفوفة المطابقة الهيكلية مع معيار ITU-T Y.3172</h3>
+                <div style="overflow-x: auto;">
+                    <table class="y3172-table">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Symbol</th>
+                                <th>Federated Role</th>
+                                <th>Policy & Compliance Context</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data Source Node</td>
+                                <td><span class="badge badge-src">SRC</span></td>
+                                <td>Local Bank Databases</td>
+                                <td>PDPL Compliant (Local Storage Only)</td>
+                            </tr>
+                            <tr>
+                                <td>Data Collector</td>
+                                <td><span class="badge badge-c">C</span></td>
+                                <td>Local Feature Extractor</td>
+                                <td>No Raw PII Extraction Allowed</td>
+                            </tr>
+                            <tr>
+                                <td>Noise Injection</td>
+                                <td><span class="badge badge-pp">PP</span></td>
+                                <td>Differential Privacy Engine</td>
+                                <td>Guarantees Zero Leakage via DP-SGD</td>
+                            </tr>
+                            <tr>
+                                <td>Local Model Trainer</td>
+                                <td><span class="badge badge-m">M</span></td>
+                                <td>Local AML Model ($\Delta W$)</td>
+                                <td>Secure Local Gradient Generation</td>
+                            </tr>
+                            <tr>
+                                <td>Policy Enforcement</td>
+                                <td><span class="badge badge-p">P</span></td>
+                                <td>SAMA Compliance Gatekeeper</td>
+                                <td>Blocks illegal parameter broadcasts</td>
+                            </tr>
+                            <tr>
+                                <td>ML Orchestrator</td>
+                                <td><span class="badge badge-fo">ML-FO</span></td>
+                                <td>Central Federated Aggregator</td>
+                                <td>Runs inside SAMA Sandbox environment</td>
+                            </tr>
+                            <tr>
+                                <td>ML Sandbox</td>
+                                <td><span class="badge badge-sb">ML-SB</span></td>
+                                <td>Isolated Testing Node</td>
+                                <td>Simulates network dropouts and noise</td>
+                            </tr>
+                            <tr>
+                                <td>Model Sink / Action</td>
+                                <td><span class="badge badge-sink">SINK</span></td>
+                                <td>Alerts & Decision Engine</td>
+                                <td>Enforces Human-in-the-Loop (SAMA Art 15)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
