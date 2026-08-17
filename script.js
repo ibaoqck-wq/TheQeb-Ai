@@ -1,3 +1,8 @@
+// ==========================================
+// TheQeb-Ai Framework & Interactive Engine
+// ==========================================
+
+// 1. سيناريوهات فحص الجاهزية والامتثال (Scenarios Data)
 const scenarios = {
     scenario1: {
         title: "Scenario 1: Cross-Bank Federated System via SARIE",
@@ -85,14 +90,68 @@ const scenarios = {
     }
 };
 
+// 2. تهيئة الواجهة عند تحميل الصفحة
 document.addEventListener("DOMContentLoaded", function() {
     const btn = document.getElementById("startBtn");
     if (btn) btn.addEventListener("click", runInspection);
+
+    // تحميل بيانات الجدول من ملف data.json تلقائياً
+    loadComplianceTableData();
 });
 
+// 3. جلب بيانات جدول الامتثال من ملف data.json وتحديث الجدول في الصفحة
+function loadComplianceTableData() {
+    fetch('./data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            renderComplianceTable(data);
+        })
+        .catch(error => {
+            console.error('Error loading data.json:', error);
+            const tableBody = document.getElementById('compliance-table-body');
+            if (tableBody) {
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="4" style="text-align: center; color: #ff4d4d; padding: 15px;">
+                            Failed to fetch compliance records from data.json.
+                        </td>
+                    </tr>`;
+            }
+        });
+}
+
+// 4. بناء صفوف جدول الامتثال ديناميكياً
+function renderComplianceTable(data) {
+    const tableBody = document.getElementById('compliance-table-body');
+    if (!tableBody) return;
+
+    tableBody.innerHTML = '';
+
+    data.forEach(item => {
+        const row = document.createElement('tr');
+        const statusClass = item.status.toLowerCase().replace(/\s+/g, '-');
+
+        row.innerHTML = `
+            <td><strong>${item.framework}</strong></td>
+            <td><code>${item.code}</code></td>
+            <td>${item.title}</td>
+            <td><span class="badge status-${statusClass}">${item.status}</span></td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// 5. دالة العداد التفاعلي للنِسب
 function animateCounter(id, target) {
     let current = 0;
     const elem = document.getElementById(id);
+    if (!elem) return;
+    
     const step = Math.ceil(target / 25);
     const timer = setInterval(() => {
         current += step;
@@ -104,6 +163,7 @@ function animateCounter(id, target) {
     }, 30);
 }
 
+// 6. تشغيل محاكاة السيناريو وفحص النظام
 function runInspection() {
     const selectElem = document.getElementById("scenarioSelect");
     const selectedScenarioKey = selectElem ? selectElem.value : "";
@@ -150,7 +210,11 @@ function runInspection() {
                 </div>
             `;
         });
-        document.getElementById("findingsList").innerHTML = findingsHTML;
-        document.getElementById("execSummaryText").innerText = data.executiveSummary;
+        
+        const findingsListElem = document.getElementById("findingsList");
+        if (findingsListElem) findingsListElem.innerHTML = findingsHTML;
+
+        const execSummaryElem = document.getElementById("execSummaryText");
+        if (execSummaryElem) execSummaryElem.innerText = data.executiveSummary;
     }, data.consoleLogs.length * 250 + 300);
 }

@@ -1,0 +1,32 @@
+[
+  {
+    "framework": "SAMA CSF",
+    "code": "SAMA-1.1.1",
+    "title": "Cybersecurity Strategy",
+    "status": "Compliant"
+  },
+  {
+    "framework": "SAMA CSF",
+    "code": "SAMA-2.2.1",
+    "title": "Data Encryption",
+    "status": "Partially Compliant"
+  },
+  {
+    "framework": "SAMA CSF",
+    "code": "SAMA-3.1.2",
+    "title": "Multi-Factor Authentication",
+    "status": "Compliant"
+  },
+  {
+    "framework": "SDAIA AI Ethics",
+    "code": "AI-ETH-1.1",
+    "title": "Unbiased Algorithm Audit",
+    "status": "Under Review"
+  },
+  {
+    "framework": "SDAIA AI Ethics",
+    "code": "AI-ETH-2.1",
+    "title": "Model Transparency",
+    "status": "Non-Compliant"
+  }
+]
