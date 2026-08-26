@@ -4,75 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThaQeb-AI | Federal Regulatory Inspection Engine</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
     <!-- Chart.js for Visual Analytics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --panel-bg: rgba(30, 41, 59, 0.7);
-            --border-color: rgba(255, 255, 255, 0.1);
+            /* High-Contrast Modern Glassmorphic Light/Dark Palette */
+            --bg-main: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            --panel-bg: rgba(30, 41, 59, 0.75);
+            --panel-border: rgba(255, 255, 255, 0.12);
+            --border-glow: #38bdf8;
             --primary-accent: #38bdf8;
+            --secondary-accent: #818cf8;
+            --text-heading: #f8fafc;
+            --text-body: #e2e8f0;
+            --text-muted: #94a3b8;
             --success-color: #10b981;
             --danger-color: #ef4444;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #f8fafc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-main);
+            background-attachment: fixed;
+            color: var(--text-body);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 24px 12px;
+            direction: ltr;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1150px;
             margin: 0 auto;
         }
 
+        /* Header Component */
         header {
             text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+            padding: 36px 24px;
+            background: var(--panel-bg);
+            border-radius: 20px;
+            border: 1.5px solid var(--panel-border);
             margin-bottom: 25px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         header h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
         }
 
         header p {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            max-width: 800px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 820px;
             margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
         }
 
+        /* Panels */
         .panel {
             background: var(--panel-bg);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            padding: 25px;
+            border-radius: 20px;
+            border: 1.5px solid var(--panel-border);
+            padding: 28px 24px;
             margin-bottom: 25px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(16px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            transition: border-color 0.3s ease;
         }
 
         h2 {
             color: var(--primary-accent);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 800;
             margin-top: 0;
             margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .form-group {
@@ -81,74 +103,84 @@
 
         label {
             display: block;
-            margin-bottom: 8px;
-            color: #cbd5e1;
-            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-heading);
+            font-weight: 700;
+            font-size: 0.95rem;
         }
 
         select, textarea {
             width: 100%;
-            padding: 12px 15px;
-            border-radius: 8px;
-            border: 1px solid #334155;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1.5px solid #334155;
             background: #0f172a;
-            color: #fff;
-            font-size: 1rem;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: inherit;
             box-sizing: border-box;
             outline: none;
-            transition: border-color 0.3s;
+            transition: all 0.25s ease;
         }
 
         select:focus, textarea:focus {
             border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
         }
 
+        /* Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, #0284c7, #2563eb);
-            color: white;
+            background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+            color: #ffffff;
             border: none;
-            padding: 14px 28px;
-            border-radius: 8px;
+            padding: 16px 28px;
+            border-radius: 12px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 800;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.25s ease;
             width: 100%;
+            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.35);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+            box-shadow: 0 6px 25px rgba(2, 132, 199, 0.5);
         }
 
         .btn-secondary {
-            background: #334155;
-            color: #38bdf8;
-            border: 1px solid var(--border-color);
-            padding: 8px 16px;
-            border-radius: 6px;
+            background: #1e293b;
+            color: var(--primary-accent);
+            border: 1.5px solid #334155;
+            padding: 9px 18px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: background 0.2s;
+            font-size: 0.88rem;
+            font-weight: 700;
+            transition: all 0.2s ease;
         }
 
         .btn-secondary:hover {
-            background: #475569;
+            background: #334155;
+            border-color: var(--primary-accent);
+            color: #ffffff;
         }
 
         /* Stream/Console Animation Box */
         .console-box {
             background: #020617;
             border: 1px solid #1e293b;
-            border-radius: 8px;
-            padding: 15px;
-            font-family: 'Courier New', Courier, monospace;
+            border-radius: 12px;
+            padding: 18px;
+            font-family: 'JetBrains Mono', monospace;
             color: #38bdf8;
             min-height: 140px;
             max-height: 220px;
             overflow-y: auto;
-            line-height: 1.6;
+            line-height: 1.7;
+            font-size: 0.9rem;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .console-entry {
@@ -161,6 +193,7 @@
             to { opacity: 1; }
         }
 
+        /* Metrics Grid */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -169,78 +202,199 @@
         }
 
         .metric-card {
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1.5px solid var(--panel-border);
+            border-radius: 16px;
+            padding: 22px 16px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
         }
 
         .metric-card h3 {
             margin: 0 0 10px 0;
-            color: #94a3b8;
-            font-size: 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 700;
         }
 
         .score {
-            font-size: 2.5rem;
-            font-weight: bold;
+            font-size: 2.6rem;
+            font-weight: 800;
             color: var(--primary-accent);
+            line-height: 1;
         }
 
         .chart-container {
             position: relative;
             margin: 20px 0;
-            height: 300px;
+            height: 320px;
             width: 100%;
+        }
+
+        /* Structural Mapping Table */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--panel-border);
+            margin-top: 15px;
         }
 
         .y3172-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px;
             text-align: left;
+            background: rgba(15, 23, 42, 0.7);
         }
 
         .y3172-table th, .y3172-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 14px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
         }
 
         .y3172-table th {
-            background-color: rgba(15, 23, 42, 0.8);
+            background-color: #0f172a;
             color: var(--primary-accent);
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
+        .y3172-table td {
+            color: var(--text-body);
+            font-weight: 500;
+        }
+
+        /* Badges */
         .badge {
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            display: inline-block;
+            letter-spacing: 0.5px;
         }
 
-        .badge-src { background: #1e3a8a; color: #93c5fd; }
-        .badge-c { background: #312e81; color: #c7d2fe; }
-        .badge-pp { background: #701a75; color: #f5d0fe; }
-        .badge-m { background: #065f46; color: #a7f3d0; }
-        .badge-p { background: #831843; color: #fbcfe8; }
-        .badge-fo { background: #7c2d12; color: #fed7aa; }
-        .badge-sb { background: #365314; color: #bef264; }
-        .badge-sink { background: #134e4a; color: #99f6e4; }
+        .badge-src { background: #0284c7; color: #ffffff; }
+        .badge-c { background: #4f46e5; color: #ffffff; }
+        .badge-pp { background: #9333ea; color: #ffffff; }
+        .badge-m { background: #16a34a; color: #ffffff; }
+        .badge-p { background: #dc2626; color: #ffffff; }
+        .badge-fo { background: #ea580c; color: #ffffff; }
+        .badge-sb { background: #65a30d; color: #ffffff; }
+        .badge-sink { background: #0d9488; color: #ffffff; }
 
+        /* FIXED: High Contrast Executive Summary Box (الصورة الأولى) */
         .executive-summary {
-            background: rgba(15, 23, 42, 0.8);
-            border-left: 4px solid var(--primary-accent);
+            background: rgba(15, 23, 42, 0.95) !important;
+            border: 1.5px solid #38bdf8 !important;
+            border-left: 6px solid #38bdf8 !important;
+            padding: 22px !important;
+            border-radius: 16px !important;
+            margin-top: 30px !important;
+            box-shadow: 0 8px 30px rgba(2, 132, 199, 0.2) !important;
+        }
+
+        .executive-summary h3 {
+            color: #38bdf8 !important;
+            font-size: 1.15rem !important;
+            font-weight: 800 !important;
+            margin-top: 0 !important;
+            margin-bottom: 12px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+
+        .executive-summary p {
+            color: #ffffff !important; /* أبيض ناصع جداً للوضوح التام */
+            font-size: 1rem !important;
+            line-height: 1.7 !important;
+            font-weight: 600 !important;
+            margin: 0 !important;
+        }
+
+        /* FIXED: Interactive Custom Policy Simulator Layout (الصورة الثانية والثالثة) */
+        .preset-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .preset-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .simulator-card {
+            display: none;
+            margin-top: 22px;
             padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            background: #0f172a;
+            border-radius: 14px;
+            border: 1.5px solid #334155;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .simulator-header {
+            display: flex;
+            flex-direction: column; /* الهيكلة الرأسية تمنع تداخل الأوسمة مع العناوين */
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .sim-status-badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sim-framework-title {
+            color: #38bdf8;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .sim-details-text {
+            margin: 0;
+            color: #f8fafc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 500;
         }
 
         .action-bar {
             display: flex;
             justify-content: flex-end;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .panel { padding: 20px 14px; }
+            .score { font-size: 2.1rem; }
         }
     </style>
 </head>
@@ -295,20 +449,16 @@
                 </div>
 
                 <!-- Visual Analytics Chart Section -->
-                <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 25px;">
-                    <h3 style="margin-top:0;">📈 Framework Breakdown & Radar Analysis</h3>
+                <div style="background: rgba(15, 23, 42, 0.7); padding: 22px; border-radius: 16px; border: 1px solid var(--panel-border); margin-bottom: 25px;">
+                    <h3 style="margin-top:0; color: var(--primary-accent); font-size: 1.1rem; font-weight: 700;">📈 Framework Breakdown & Radar Analysis</h3>
                     <div class="chart-container">
                         <canvas id="complianceChart"></canvas>
                     </div>
                 </div>
 
-                <!-- Identified Gaps & Recommendations -->
-                <h3>⚠️ Identified Policy & Technical Gaps</h3>
-                <div id="findingsList"></div>
-
                 <!-- Structural Mapping Matrix -->
-                <h3 style="margin-top: 35px;">📐 Structural Mapping Matrix (ITU-T Y.3172 Architecture)</h3>
-                <div style="overflow-x: auto;">
+                <h3 style="margin-top: 35px; color: var(--primary-accent); font-size: 1.2rem; font-weight: 800;">📐 Structural Mapping Matrix (ITU-T Y.3172 Architecture)</h3>
+                <div class="table-responsive">
                     <table class="y3172-table">
                         <thead>
                             <tr>
@@ -340,7 +490,7 @@
                             <tr>
                                 <td>Local Model Trainer</td>
                                 <td><span class="badge badge-m">M</span></td>
-                                <td>Local AML Model ($\Delta W$)</td>
+                                <td>Local AML Model (&Delta;W)</td>
                                 <td>Secure Local Gradient Generation</td>
                             </tr>
                             <tr>
@@ -371,7 +521,7 @@
                     </table>
                 </div>
 
-                <!-- Overall Executive Recommendation Summary -->
+                <!-- Overall Executive Recommendation Summary (Fixed High-Contrast Box) -->
                 <div class="executive-summary">
                     <h3>📌 Overall Executive Recommendation Summary</h3>
                     <p id="execSummaryText">Pending audit execution...</p>
@@ -383,13 +533,13 @@
                 </div>
             </section>
 
-            <!-- Bottom Panel: Interactive Custom Policy Simulator (Moved to Bottom) -->
-            <section class="panel" style="margin-top: 40px;">
+            <!-- Bottom Panel: Interactive Custom Policy Simulator -->
+            <section class="panel" style="margin-top: 35px;">
                 <h2>⚡ Real-Time Custom Policy Simulator</h2>
-                <p style="color: #94a3b8; margin-bottom: 15px;">Test custom text snippets or policies against SAMA CSF & SDAIA PDPL frameworks in real time:</p>
+                <p style="color: var(--text-muted); margin-bottom: 18px; font-size: 0.95rem;">Test custom text snippets or policies against SAMA CSF & SDAIA PDPL frameworks in real time:</p>
                 
-                <div style="margin-bottom: 15px;">
-                    <span style="font-size: 0.9rem; color: #cbd5e1;">Quick Presets: </span>
+                <div class="preset-container">
+                    <span class="preset-label">Quick Presets:</span>
                     <button class="btn-secondary" type="button" onclick="loadSamplePolicy(1)">Data Sharing Violation</button>
                     <button class="btn-secondary" type="button" onclick="loadSamplePolicy(2)">Compliant Encrypted Flow</button>
                 </div>
@@ -397,14 +547,15 @@
                 <div class="form-group">
                     <textarea id="customPolicyInput" rows="3" placeholder="Enter custom policy statement or protocol mechanism..."></textarea>
                 </div>
-                <button class="btn-secondary" type="button" onclick="simulateCustomPolicy()" style="width: auto; padding: 10px 20px;">🔍 Analyze Input Text</button>
+                <button class="btn-secondary" type="button" onclick="simulateCustomPolicy()" style="width: auto; padding: 12px 24px;">🔍 Analyze Input Text</button>
 
-                <div id="simulatorResult" style="display:none; margin-top: 20px; padding: 15px; background: #0f172a; border-radius: 8px; border: 1px solid #334155;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                        <span id="simStatusBadge" class="badge"></span>
-                        <span id="simFramework" style="color: #38bdf8; font-weight: bold;"></span>
+                <!-- FIXED: Result Box Structure -->
+                <div id="simulatorResult" class="simulator-card">
+                    <div class="simulator-header">
+                        <span id="simStatusBadge" class="sim-status-badge"></span>
+                        <div id="simFramework" class="sim-framework-title"></div>
                     </div>
-                    <p id="simDetails" style="margin: 0; color: #e2e8f0; font-size: 0.95rem;"></p>
+                    <p id="simDetails" class="sim-details-text"></p>
                 </div>
             </section>
         </main>
@@ -433,7 +584,7 @@
                 ' Connecting to SAMA Cyber Security Framework (CSF) v3.2 Node...',
                 ' Querying SDAIA Personal Data Protection Law (PDPL) vector space...',
                 ' Parsing ITU-T Y.3172 Architectural Specifications for Federated Learning...',
-                ' Extracting model parameters & verifying Differential Privacy ($\epsilon, \delta$) guarantees...',
+                ' Extracting model parameters & verifying Differential Privacy (ε, δ) guarantees...',
                 ' Matching network parameters against SARIE settlement protocols...',
                 ' Generative Audit Verification Complete. Rendering Report...'
             ];
@@ -455,10 +606,10 @@
                         populateReportResults(scenario);
                     }, 600);
                 }
-            }, 500);
+            }, 450);
         }
 
-        // Mock Scoring & Chart Execution
+        // Scoring & Executive Summary Text Update
         function populateReportResults(scenario) {
             let sama = 95, pdpl = 92, itu = 98;
             let summary = '';
@@ -494,11 +645,12 @@
                     labels: ['SAMA CSF Alignment', 'SDAIA PDPL Compliance', 'ITU-T Y.3172 Standard', 'Data Privacy (DP)', 'Network Isolation'],
                     datasets: [{
                         label: 'Audit Assessment Score (%)',
-                        data: [sama, pdpl, itu, (sama + pdpl) / 2, itu],
-                        backgroundColor: 'rgba(56, 189, 248, 0.2)',
+                        data: [sama, pdpl, itu, Math.round((sama + pdpl) / 2), itu],
+                        backgroundColor: 'rgba(56, 189, 248, 0.25)',
                         borderColor: '#38bdf8',
                         pointBackgroundColor: '#38bdf8',
-                        pointBorderColor: '#fff'
+                        pointBorderColor: '#ffffff',
+                        borderWidth: 2
                     }]
                 },
                 options: {
@@ -506,15 +658,15 @@
                     maintainAspectRatio: false,
                     scales: {
                         r: {
-                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            pointLabels: { color: '#cbd5e1', font: { size: 12 } },
+                            angleLines: { color: 'rgba(255, 255, 255, 0.15)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.15)' },
+                            pointLabels: { color: '#e2e8f0', font: { size: 12, weight: '600' } },
                             ticks: { backdropColor: 'transparent', color: '#94a3b8' },
                             suggestedMin: 0,
                             suggestedMax: 100
                         }
                     },
-                    plugins: { legend: { labels: { color: '#f8fafc' } } }
+                    plugins: { legend: { labels: { color: '#f8fafc', font: { weight: '700' } } } }
                 }
             });
         }
@@ -544,18 +696,17 @@
             resultDiv.style.display = 'block';
 
             if (text.toLowerCase().includes("unencrypted") || text.toLowerCase().includes("without consent") || text.toLowerCase().includes("pooled")) {
-                badge.style.backgroundColor = "#ef4444";
+                badge.style.backgroundColor = "#dc2626";
                 badge.innerText = "CRITICAL NON-COMPLIANCE";
                 framework.innerText = "SDAIA PDPL (Art. 10) / SAMA CSF";
                 details.innerText = "Violation Detected: Transfer or pooling of unencrypted customer telemetry without prior explicit consent violates Saudi Personal Data Protection Law requirements.";
             } else {
-                badge.style.backgroundColor = "#10b981";
+                badge.style.backgroundColor = "#059669";
                 badge.innerText = "FULLY COMPLIANT";
                 framework.innerText = "SAMA Cyber Security Framework / ITU-T Y.3172";
                 details.innerText = "Verified: Secure local differential privacy parameter generation aligns with regulatory sandbox privacy standards.";
             }
         }
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
