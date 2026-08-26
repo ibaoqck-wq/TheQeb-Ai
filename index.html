@@ -10,18 +10,18 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* High-Contrast Modern Glassmorphic Light/Dark Palette */
-            --bg-main: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
-            --panel-bg: rgba(30, 41, 59, 0.75);
-            --panel-border: rgba(255, 255, 255, 0.12);
-            --border-glow: #38bdf8;
-            --primary-accent: #38bdf8;
-            --secondary-accent: #818cf8;
-            --text-heading: #f8fafc;
-            --text-body: #e2e8f0;
-            --text-muted: #94a3b8;
-            --success-color: #10b981;
-            --danger-color: #ef4444;
+            /* Vibrant Modern Light Glassmorphic Palette */
+            --bg-main: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #e0e7ff 100%);
+            --panel-bg: rgba(255, 255, 255, 0.85);
+            --panel-border: rgba(255, 255, 255, 0.6);
+            --border-glow: #0284c7;
+            --primary-accent: #0284c7;
+            --secondary-accent: #4f46e5;
+            --text-heading: #0f172a;
+            --text-body: #1e293b;
+            --text-muted: #64748b;
+            --success-color: #059669;
+            --danger-color: #dc2626;
         }
 
         body {
@@ -50,14 +50,14 @@
             border: 1.5px solid var(--panel-border);
             margin-bottom: 25px;
             backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08);
         }
 
         header h1 {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;
@@ -69,7 +69,7 @@
             max-width: 820px;
             margin: 0 auto;
             line-height: 1.6;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* Panels */
@@ -80,7 +80,7 @@
             padding: 28px 24px;
             margin-bottom: 25px;
             backdrop-filter: blur(16px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.05);
             transition: border-color 0.3s ease;
         }
 
@@ -90,7 +90,7 @@
             font-weight: 800;
             margin-top: 0;
             margin-bottom: 20px;
-            border-bottom: 1px solid var(--panel-border);
+            border-bottom: 1.5px solid rgba(226, 232, 240, 0.8);
             padding-bottom: 12px;
             display: flex;
             align-items: center;
@@ -113,20 +113,21 @@
             width: 100%;
             padding: 14px 16px;
             border-radius: 12px;
-            border: 1.5px solid #334155;
-            background: #0f172a;
-            color: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            background: #ffffff;
+            color: #0f172a;
             font-size: 0.95rem;
             font-weight: 600;
             font-family: inherit;
             box-sizing: border-box;
             outline: none;
             transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         select:focus, textarea:focus {
             border-color: var(--primary-accent);
-            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
         }
 
         /* Buttons */
@@ -141,35 +142,36 @@
             cursor: pointer;
             transition: all 0.25s ease;
             width: 100%;
-            box-shadow: 0 4px 20px rgba(2, 132, 199, 0.35);
+            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(2, 132, 199, 0.5);
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
         }
 
         .btn-secondary {
-            background: #1e293b;
+            background: #ffffff;
             color: var(--primary-accent);
-            border: 1.5px solid #334155;
+            border: 1.5px solid #cbd5e1;
             padding: 9px 18px;
             border-radius: 10px;
             cursor: pointer;
             font-size: 0.88rem;
             font-weight: 700;
             transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         .btn-secondary:hover {
-            background: #334155;
+            background: #f8fafc;
             border-color: var(--primary-accent);
-            color: #ffffff;
+            color: #0284c7;
         }
 
         /* Stream/Console Animation Box */
         .console-box {
-            background: #020617;
+            background: #0f172a;
             border: 1px solid #1e293b;
             border-radius: 12px;
             padding: 18px;
@@ -180,7 +182,7 @@
             overflow-y: auto;
             line-height: 1.7;
             font-size: 0.9rem;
-            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .console-entry {
@@ -202,12 +204,12 @@
         }
 
         .metric-card {
-            background: rgba(15, 23, 42, 0.8);
-            border: 1.5px solid var(--panel-border);
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
             border-radius: 16px;
             padding: 22px 16px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             position: relative;
             overflow: hidden;
         }
@@ -219,7 +221,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            background: linear-gradient(90deg, #0284c7, #6366f1);
         }
 
         .metric-card h3 {
@@ -247,25 +249,26 @@
         .table-responsive {
             overflow-x: auto;
             border-radius: 14px;
-            border: 1px solid var(--panel-border);
+            border: 1px solid #e2e8f0;
             margin-top: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .y3172-table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            background: rgba(15, 23, 42, 0.7);
+            background: #ffffff;
         }
 
         .y3172-table th, .y3172-table td {
             padding: 14px 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid #f1f5f9;
             font-size: 0.9rem;
         }
 
         .y3172-table th {
-            background-color: #0f172a;
+            background-color: #f8fafc;
             color: var(--primary-accent);
             font-weight: 800;
             letter-spacing: 0.5px;
@@ -273,7 +276,7 @@
 
         .y3172-table td {
             color: var(--text-body);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         /* Badges */
@@ -295,19 +298,19 @@
         .badge-sb { background: #65a30d; color: #ffffff; }
         .badge-sink { background: #0d9488; color: #ffffff; }
 
-        /* FIXED: High Contrast Executive Summary Box (الصورة الأولى) */
+        /* Executive Summary Box */
         .executive-summary {
-            background: rgba(15, 23, 42, 0.95) !important;
-            border: 1.5px solid #38bdf8 !important;
-            border-left: 6px solid #38bdf8 !important;
+            background: #ffffff !important;
+            border: 1.5px solid #0284c7 !important;
+            border-left: 6px solid #0284c7 !important;
             padding: 22px !important;
             border-radius: 16px !important;
             margin-top: 30px !important;
-            box-shadow: 0 8px 30px rgba(2, 132, 199, 0.2) !important;
+            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08) !important;
         }
 
         .executive-summary h3 {
-            color: #38bdf8 !important;
+            color: #0284c7 !important;
             font-size: 1.15rem !important;
             font-weight: 800 !important;
             margin-top: 0 !important;
@@ -318,14 +321,14 @@
         }
 
         .executive-summary p {
-            color: #ffffff !important; /* أبيض ناصع جداً للوضوح التام */
+            color: #0f172a !important;
             font-size: 1rem !important;
             line-height: 1.7 !important;
             font-weight: 600 !important;
             margin: 0 !important;
         }
 
-        /* FIXED: Interactive Custom Policy Simulator Layout (الصورة الثانية والثالثة) */
+        /* Interactive Custom Policy Simulator Layout */
         .preset-container {
             display: flex;
             flex-wrap: wrap;
@@ -344,20 +347,20 @@
             display: none;
             margin-top: 22px;
             padding: 20px;
-            background: #0f172a;
+            background: #ffffff;
             border-radius: 14px;
-            border: 1.5px solid #334155;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            border: 1.5px solid #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
         .simulator-header {
             display: flex;
-            flex-direction: column; /* الهيكلة الرأسية تمنع تداخل الأوسمة مع العناوين */
+            flex-direction: column;
             align-items: flex-start;
             gap: 10px;
             margin-bottom: 12px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid #f1f5f9;
         }
 
         .sim-status-badge {
@@ -371,17 +374,17 @@
         }
 
         .sim-framework-title {
-            color: #38bdf8;
+            color: #0284c7;
             font-size: 1.1rem;
             font-weight: 800;
         }
 
         .sim-details-text {
             margin: 0;
-            color: #f8fafc;
+            color: #1e293b;
             font-size: 0.95rem;
             line-height: 1.6;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .action-bar {
@@ -449,7 +452,7 @@
                 </div>
 
                 <!-- Visual Analytics Chart Section -->
-                <div style="background: rgba(15, 23, 42, 0.7); padding: 22px; border-radius: 16px; border: 1px solid var(--panel-border); margin-bottom: 25px;">
+                <div style="background: #ffffff; padding: 22px; border-radius: 16px; border: 1.5px solid #e2e8f0; margin-bottom: 25px;">
                     <h3 style="margin-top:0; color: var(--primary-accent); font-size: 1.1rem; font-weight: 700;">📈 Framework Breakdown & Radar Analysis</h3>
                     <div class="chart-container">
                         <canvas id="complianceChart"></canvas>
@@ -521,7 +524,7 @@
                     </table>
                 </div>
 
-                <!-- Overall Executive Recommendation Summary (Fixed High-Contrast Box) -->
+                <!-- Overall Executive Recommendation Summary -->
                 <div class="executive-summary">
                     <h3>📌 Overall Executive Recommendation Summary</h3>
                     <p id="execSummaryText">Pending audit execution...</p>
@@ -549,7 +552,7 @@
                 </div>
                 <button class="btn-secondary" type="button" onclick="simulateCustomPolicy()" style="width: auto; padding: 12px 24px;">🔍 Analyze Input Text</button>
 
-                <!-- FIXED: Result Box Structure -->
+                <!-- Result Box Structure -->
                 <div id="simulatorResult" class="simulator-card">
                     <div class="simulator-header">
                         <span id="simStatusBadge" class="sim-status-badge"></span>
@@ -646,9 +649,9 @@
                     datasets: [{
                         label: 'Audit Assessment Score (%)',
                         data: [sama, pdpl, itu, Math.round((sama + pdpl) / 2), itu],
-                        backgroundColor: 'rgba(56, 189, 248, 0.25)',
-                        borderColor: '#38bdf8',
-                        pointBackgroundColor: '#38bdf8',
+                        backgroundColor: 'rgba(2, 132, 199, 0.2)',
+                        borderColor: '#0284c7',
+                        pointBackgroundColor: '#0284c7',
                         pointBorderColor: '#ffffff',
                         borderWidth: 2
                     }]
@@ -658,15 +661,15 @@
                     maintainAspectRatio: false,
                     scales: {
                         r: {
-                            angleLines: { color: 'rgba(255, 255, 255, 0.15)' },
-                            grid: { color: 'rgba(255, 255, 255, 0.15)' },
-                            pointLabels: { color: '#e2e8f0', font: { size: 12, weight: '600' } },
-                            ticks: { backdropColor: 'transparent', color: '#94a3b8' },
+                            angleLines: { color: 'rgba(148, 163, 184, 0.3)' },
+                            grid: { color: 'rgba(148, 163, 184, 0.3)' },
+                            pointLabels: { color: '#0f172a', font: { size: 12, weight: '700' } },
+                            ticks: { backdropColor: 'transparent', color: '#64748b' },
                             suggestedMin: 0,
                             suggestedMax: 100
                         }
                     },
-                    plugins: { legend: { labels: { color: '#f8fafc', font: { weight: '700' } } } }
+                    plugins: { legend: { labels: { color: '#0f172a', font: { weight: '700' } } } }
                 }
             });
         }
