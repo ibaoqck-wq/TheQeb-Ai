@@ -10,23 +10,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* Vibrant Modern Light Glassmorphic Palette */
-            --bg-main: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #e0e7ff 100%);
-            --panel-bg: rgba(255, 255, 255, 0.85);
-            --panel-border: rgba(255, 255, 255, 0.6);
-            --border-glow: #0284c7;
-            --primary-accent: #0284c7;
-            --secondary-accent: #4f46e5;
-            --text-heading: #0f172a;
-            --text-body: #1e293b;
-            --text-muted: #64748b;
-            --success-color: #059669;
-            --danger-color: #dc2626;
+            /* Exact Colors & Theme Extracted From Your Provided Reference Image */
+            --bg-outer: #edf2f7;                /* Light Slate Blue-Gray Outer Background */
+            --panel-outer: #4a5568;             /* Slate Panel Container Background */
+            --panel-border: rgba(255, 255, 255, 0.12);
+            --card-inner: #2d3748;              /* Dark Slate Navy Inner Card Background */
+            --card-header-bg: #1a202c;          /* Darker Slate Box & Inputs */
+            --primary-accent: #63b3ed;          /* Bright Slate Blue Accent */
+            --secondary-accent: #798e9c;        /* Muted Blue-Gray */
+            --text-heading: #63b3ed;           /* Bright Blue Title Text */
+            --text-white: #ffffff;             /* Crisp Pure White Text */
+            --text-body: #e2e8f0;              /* Soft Light Gray Body Text */
+            --text-muted: #cbd5e0;             /* Soft Muted Text */
+            --btn-blue: #3182ce;                /* Vivid Slate Blue Button */
+            --gap-bg: #fff5f5;                 /* Soft Warm Red-White Gap Container */
+            --gap-border: #feb2b2;             /* Soft Red Gap Border */
         }
 
         body {
-            background: var(--bg-main);
-            background-attachment: fixed;
+            background-color: var(--bg-outer);
             color: var(--text-body);
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
@@ -41,25 +43,22 @@
             margin: 0 auto;
         }
 
-        /* Header Component */
+        /* Header Component (Matching Image Style) */
         header {
             text-align: center;
-            padding: 36px 24px;
-            background: var(--panel-bg);
-            border-radius: 20px;
-            border: 1.5px solid var(--panel-border);
+            padding: 30px 24px;
+            background: var(--panel-outer);
+            border-radius: 16px;
             margin-bottom: 25px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
+            margin-top: 0;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-white);
             letter-spacing: -0.5px;
         }
 
@@ -72,25 +71,22 @@
             font-weight: 600;
         }
 
-        /* Panels */
+        /* Panels Matching Image Dark Slate Theme */
         .panel {
-            background: var(--panel-bg);
-            border-radius: 20px;
-            border: 1.5px solid var(--panel-border);
+            background: var(--panel-outer);
+            border-radius: 16px;
             padding: 28px 24px;
             margin-bottom: 25px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 8px 25px rgba(2, 132, 199, 0.05);
-            transition: border-color 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         h2 {
             color: var(--primary-accent);
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             font-weight: 800;
             margin-top: 0;
             margin-bottom: 20px;
-            border-bottom: 1.5px solid rgba(226, 232, 240, 0.8);
+            border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);
             padding-bottom: 12px;
             display: flex;
             align-items: center;
@@ -104,7 +100,7 @@
         label {
             display: block;
             margin-bottom: 10px;
-            color: var(--text-heading);
+            color: var(--text-muted);
             font-weight: 700;
             font-size: 0.95rem;
         }
@@ -112,77 +108,72 @@
         select, textarea {
             width: 100%;
             padding: 14px 16px;
-            border-radius: 12px;
-            border: 1.5px solid #cbd5e1;
-            background: #ffffff;
-            color: #0f172a;
+            border-radius: 10px;
+            border: 1px solid #1a202c;
+            background: var(--card-header-bg);
+            color: var(--text-white);
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             font-family: inherit;
             box-sizing: border-box;
             outline: none;
             transition: all 0.25s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         select:focus, textarea:focus {
             border-color: var(--primary-accent);
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+            box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.25);
         }
 
-        /* Buttons */
+        /* Buttons (Matching Reference Blue) */
         .btn-primary {
-            background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-            color: #ffffff;
+            background: var(--btn-blue);
+            color: var(--text-white);
             border: none;
             padding: 16px 28px;
-            border-radius: 12px;
+            border-radius: 10px;
             font-size: 1rem;
             font-weight: 800;
             cursor: pointer;
             transition: all 0.25s ease;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+            box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
+            background: #2b6cb0;
         }
 
         .btn-secondary {
-            background: #ffffff;
+            background: var(--card-inner);
             color: var(--primary-accent);
-            border: 1.5px solid #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             padding: 9px 18px;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 0.88rem;
             font-weight: 700;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         .btn-secondary:hover {
-            background: #f8fafc;
-            border-color: var(--primary-accent);
-            color: #0284c7;
+            background: var(--card-header-bg);
+            color: var(--text-white);
         }
 
-        /* Stream/Console Animation Box */
+        /* Stream / Console Box */
         .console-box {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 12px;
+            background: var(--card-header-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
             padding: 18px;
             font-family: 'JetBrains Mono', monospace;
-            color: #38bdf8;
+            color: var(--primary-accent);
             min-height: 140px;
             max-height: 220px;
             overflow-y: auto;
             line-height: 1.7;
             font-size: 0.9rem;
-            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .console-entry {
@@ -204,12 +195,11 @@
         }
 
         .metric-card {
-            background: #ffffff;
-            border: 1.5px solid #e2e8f0;
-            border-radius: 16px;
+            background: var(--card-inner);
+            border-radius: 14px;
             padding: 22px 16px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
             position: relative;
             overflow: hidden;
         }
@@ -221,7 +211,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, #0284c7, #6366f1);
+            background: var(--primary-accent);
         }
 
         .metric-card h3 {
@@ -232,7 +222,7 @@
         }
 
         .score {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--primary-accent);
             line-height: 1;
@@ -245,37 +235,67 @@
             width: 100%;
         }
 
+        /* Gap Cards (Identified Policy & Technical Gaps from Image 2) */
+        .gap-card {
+            background-color: var(--gap-bg);
+            border: 1.5px solid var(--gap-border);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-top: 18px;
+            color: #2d3748;
+        }
+
+        .gap-card h4 {
+            color: #e53e3e;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .gap-card p {
+            margin: 0 0 10px 0;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            color: #4a5568;
+            font-weight: 600;
+        }
+
+        .gap-card .action-rec {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2b6cb0;
+        }
+
         /* Structural Mapping Table */
         .table-responsive {
             overflow-x: auto;
-            border-radius: 14px;
-            border: 1px solid #e2e8f0;
+            border-radius: 12px;
             margin-top: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .y3172-table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
-            background: #ffffff;
+            background: var(--card-inner);
         }
 
         .y3172-table th, .y3172-table td {
             padding: 14px 16px;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             font-size: 0.9rem;
         }
 
         .y3172-table th {
-            background-color: #f8fafc;
+            background-color: var(--card-header-bg);
             color: var(--primary-accent);
             font-weight: 800;
             letter-spacing: 0.5px;
         }
 
         .y3172-table td {
-            color: var(--text-body);
+            color: var(--text-white);
             font-weight: 600;
         }
 
@@ -289,43 +309,42 @@
             letter-spacing: 0.5px;
         }
 
-        .badge-src { background: #0284c7; color: #ffffff; }
-        .badge-c { background: #4f46e5; color: #ffffff; }
-        .badge-pp { background: #9333ea; color: #ffffff; }
-        .badge-m { background: #16a34a; color: #ffffff; }
-        .badge-p { background: #dc2626; color: #ffffff; }
-        .badge-fo { background: #ea580c; color: #ffffff; }
-        .badge-sb { background: #65a30d; color: #ffffff; }
-        .badge-sink { background: #0d9488; color: #ffffff; }
+        .badge-src { background: #3182ce; color: #ffffff; }
+        .badge-c { background: #805ad5; color: #ffffff; }
+        .badge-pp { background: #d69e2e; color: #ffffff; }
+        .badge-m { background: #38a169; color: #ffffff; }
+        .badge-p { background: #e53e3e; color: #ffffff; }
+        .badge-fo { background: #dd6b20; color: #ffffff; }
+        .badge-sb { background: #319795; color: #ffffff; }
+        .badge-sink { background: #00a3c4; color: #ffffff; }
 
         /* Executive Summary Box */
         .executive-summary {
-            background: #ffffff !important;
-            border: 1.5px solid #0284c7 !important;
-            border-left: 6px solid #0284c7 !important;
-            padding: 22px !important;
-            border-radius: 16px !important;
-            margin-top: 30px !important;
-            box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08) !important;
+            background: var(--card-inner);
+            border-left: 5px solid var(--primary-accent);
+            padding: 22px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .executive-summary h3 {
-            color: #0284c7 !important;
-            font-size: 1.15rem !important;
-            font-weight: 800 !important;
-            margin-top: 0 !important;
-            margin-bottom: 12px !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 8px !important;
+            color: var(--primary-accent);
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .executive-summary p {
-            color: #0f172a !important;
-            font-size: 1rem !important;
-            line-height: 1.7 !important;
-            font-weight: 600 !important;
-            margin: 0 !important;
+            color: var(--text-white);
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 700;
+            margin: 0;
         }
 
         /* Interactive Custom Policy Simulator Layout */
@@ -347,10 +366,9 @@
             display: none;
             margin-top: 22px;
             padding: 20px;
-            background: #ffffff;
-            border-radius: 14px;
-            border: 1.5px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            background: var(--card-header-bg);
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .simulator-header {
@@ -360,7 +378,7 @@
             gap: 10px;
             margin-bottom: 12px;
             padding-bottom: 10px;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .sim-status-badge {
@@ -374,14 +392,14 @@
         }
 
         .sim-framework-title {
-            color: #0284c7;
+            color: var(--primary-accent);
             font-size: 1.1rem;
             font-weight: 800;
         }
 
         .sim-details-text {
             margin: 0;
-            color: #1e293b;
+            color: var(--text-white);
             font-size: 0.95rem;
             line-height: 1.6;
             font-weight: 600;
@@ -452,11 +470,26 @@
                 </div>
 
                 <!-- Visual Analytics Chart Section -->
-                <div style="background: #ffffff; padding: 22px; border-radius: 16px; border: 1.5px solid #e2e8f0; margin-bottom: 25px;">
-                    <h3 style="margin-top:0; color: var(--primary-accent); font-size: 1.1rem; font-weight: 700;">📈 Framework Breakdown & Radar Analysis</h3>
+                <div style="background: var(--card-inner); padding: 22px; border-radius: 14px; margin-bottom: 25px;">
+                    <h3 style="margin-top:0; color: var(--primary-accent); font-size: 1.1rem; font-weight: 800;">📈 Framework Breakdown & Radar Analysis</h3>
                     <div class="chart-container">
                         <canvas id="complianceChart"></canvas>
                     </div>
+                </div>
+
+                <!-- Identified Policy & Technical Gaps (Matching Reference Image) -->
+                <h3 style="margin-top: 30px; color: #faf089; font-size: 1.2rem; font-weight: 800;">⚠️ Identified Policy & Technical Gaps</h3>
+                
+                <div class="gap-card">
+                    <h4>Automated Account Freeze Risk (SAMA AML Regulation Gap)</h4>
+                    <p><strong>Description:</strong> The system triggers account suspension automatically upon anomaly detection without mandatory clearance from a certified compliance officer.</p>
+                    <div class="action-rec">Action Recommendation: Reconfigure SINK output to emit an alert to a human compliance officer in adherence to SAMA Circular Article 15.</div>
+                </div>
+
+                <div class="gap-card" style="background-color: #f0fff4; border-color: #9ae6b4;">
+                    <h4 style="color: #276749;">Privacy & Encryption Alignment (SDAIA PDPL Compliant)</h4>
+                    <p><strong>Description:</strong> Differential Privacy (DP-SGD) is properly integrated at local nodes to obscure weight gradients prior to central aggregation.</p>
+                    <div class="action-rec" style="color: #2b6cb0;">Action Recommendation: Maintain current differential noise configuration to meet national data sovereignty standards.</div>
                 </div>
 
                 <!-- Structural Mapping Matrix -->
@@ -524,7 +557,7 @@
                     </table>
                 </div>
 
-                <!-- Overall Executive Recommendation Summary -->
+                <!-- Executive Summary Box -->
                 <div class="executive-summary">
                     <h3>📌 Overall Executive Recommendation Summary</h3>
                     <p id="execSummaryText">Pending audit execution...</p>
@@ -564,9 +597,8 @@
         </main>
     </div>
 
-    <!-- Logic Script for Animated Stream, Chart & Simulator -->
+    <!-- Logic Script -->
     <script>
-        // Streaming Data Flow Animation
         function runRegulatoryAudit() {
             const scenario = document.getElementById('scenarioSelect').value;
             if (!scenario) {
@@ -612,7 +644,6 @@
             }, 450);
         }
 
-        // Scoring & Executive Summary Text Update
         function populateReportResults(scenario) {
             let sama = 95, pdpl = 92, itu = 98;
             let summary = '';
@@ -636,7 +667,6 @@
             renderAuditChart(sama, pdpl, itu);
         }
 
-        // Radar Chart Rendering
         let myChart = null;
         function renderAuditChart(sama, pdpl, itu) {
             const ctx = document.getElementById('complianceChart').getContext('2d');
@@ -649,9 +679,9 @@
                     datasets: [{
                         label: 'Audit Assessment Score (%)',
                         data: [sama, pdpl, itu, Math.round((sama + pdpl) / 2), itu],
-                        backgroundColor: 'rgba(2, 132, 199, 0.2)',
-                        borderColor: '#0284c7',
-                        pointBackgroundColor: '#0284c7',
+                        backgroundColor: 'rgba(99, 179, 237, 0.25)',
+                        borderColor: '#63b3ed',
+                        pointBackgroundColor: '#63b3ed',
                         pointBorderColor: '#ffffff',
                         borderWidth: 2
                     }]
@@ -661,20 +691,19 @@
                     maintainAspectRatio: false,
                     scales: {
                         r: {
-                            angleLines: { color: 'rgba(148, 163, 184, 0.3)' },
-                            grid: { color: 'rgba(148, 163, 184, 0.3)' },
-                            pointLabels: { color: '#0f172a', font: { size: 12, weight: '700' } },
-                            ticks: { backdropColor: 'transparent', color: '#64748b' },
+                            angleLines: { color: 'rgba(255, 255, 255, 0.15)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.15)' },
+                            pointLabels: { color: '#ffffff', font: { size: 11, weight: '700' } },
+                            ticks: { backdropColor: 'transparent', color: '#cbd5e0' },
                             suggestedMin: 0,
                             suggestedMax: 100
                         }
                     },
-                    plugins: { legend: { labels: { color: '#0f172a', font: { weight: '700' } } } }
+                    plugins: { legend: { labels: { color: '#ffffff', font: { weight: '700' } } } }
                 }
             });
         }
 
-        // Bottom Simulator Handlers
         function loadSamplePolicy(type) {
             const input = document.getElementById('customPolicyInput');
             if (type === 1) {
@@ -699,12 +728,12 @@
             resultDiv.style.display = 'block';
 
             if (text.toLowerCase().includes("unencrypted") || text.toLowerCase().includes("without consent") || text.toLowerCase().includes("pooled")) {
-                badge.style.backgroundColor = "#dc2626";
+                badge.style.backgroundColor = "#e53e3e";
                 badge.innerText = "CRITICAL NON-COMPLIANCE";
                 framework.innerText = "SDAIA PDPL (Art. 10) / SAMA CSF";
                 details.innerText = "Violation Detected: Transfer or pooling of unencrypted customer telemetry without prior explicit consent violates Saudi Personal Data Protection Law requirements.";
             } else {
-                badge.style.backgroundColor = "#059669";
+                badge.style.backgroundColor = "#38a169";
                 badge.innerText = "FULLY COMPLIANT";
                 framework.innerText = "SAMA Cyber Security Framework / ITU-T Y.3172";
                 details.innerText = "Verified: Secure local differential privacy parameter generation aligns with regulatory sandbox privacy standards.";
