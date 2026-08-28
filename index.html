@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThaQeb-AI | Saudi AI Regulatory Intelligence Platform</title>
+    <title>ThaQeb-AI | AI-Powered Regulatory Compliance & Risk Auditor Concept</title>
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
     <!-- Chart.js for Visual Analytics -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* Colors & Modern Cyber Gradient Theme */
-            --bg-outer: #e6eff8;                
-            --panel-outer: #525e75;             
+            /* Applied Visual Theme (Colors, Panels, and Modern Cyber Gradient Palette) */
+            --bg-outer: #e6eff8;                /* Premium Light Ice Blue Outer Background */
+            --panel-outer: #525e75;             /* Modern Dark Slate Blue Panel Background */
             --panel-border: rgba(255, 255, 255, 0.15);
-            --card-inner: #293241;              
-            --card-header-bg: #1d2432;          
+            --card-inner: #293241;              /* Ultra-Sleek Slate Navy Inner Card */
+            --card-header-bg: #1d2432;          /* Deep Cyber Input & Box Background */
             
-            /* Gradient & Neon Accents */
-            --neon-cyan: #00d2ff;               
-            --neon-magenta: #e040fb;            
+            /* Neon Accents & Vibrant Glows */
+            --neon-cyan: #00d2ff;               /* Electric Cyan */
+            --neon-magenta: #e040fb;            /* Electric Purple/Magenta */
             --gradient-accent: linear-gradient(90deg, #00d2ff 0%, #9d4edd 50%, #e040fb 100%);
             --text-heading: #38ef7d;           
             --text-white: #ffffff;             
@@ -50,7 +50,7 @@
             margin: 0 auto;
         }
 
-        /* Header Component - Winning Hook Positioning */
+        /* Header Stage: Modern Hook Header */
         header {
             text-align: center;
             padding: 40px 25px 35px;
@@ -88,30 +88,49 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 800;
             margin: 0 0 10px 0;
             color: var(--text-white);
             letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
         .tagline {
             color: var(--neon-cyan);
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
+        }
+
+        .hero-pillars {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .pillar-tag {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            padding: 4px 14px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .sub-tagline {
             color: #cbd5e1;
             font-size: 0.98rem;
-            max-width: 800px;
+            max-width: 840px;
             margin: 0 auto;
             line-height: 1.6;
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        /* Main Structural Panels */
+        /* Structural Panels */
         .panel {
             background: var(--panel-outer);
             border-radius: 20px;
@@ -131,7 +150,7 @@
             padding-bottom: 14px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
         }
 
         .form-group {
@@ -159,6 +178,7 @@
             box-sizing: border-box;
             outline: none;
             transition: all 0.3s ease;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
         }
 
         select:focus, textarea:focus {
@@ -166,7 +186,7 @@
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
         }
 
-        /* Eye-Catching Modern Buttons */
+        /* Buttons */
         .btn-primary {
             background: var(--btn-gradient);
             color: var(--text-white);
@@ -179,6 +199,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             width: 100%;
             box-shadow: 0 8px 20px var(--btn-glow);
+            letter-spacing: 0.3px;
         }
 
         .btn-primary:hover {
@@ -191,10 +212,10 @@
             background: var(--card-inner);
             color: #38bdf8;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 10px 18px;
-            border-radius: 10px;
+            padding: 8px 14px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 700;
             transition: all 0.25s ease;
             display: inline-flex;
@@ -206,6 +227,7 @@
             background: var(--card-header-bg);
             color: var(--text-white);
             border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
         }
 
         .btn-ai-fix {
@@ -225,7 +247,7 @@
             box-shadow: 0 6px 16px rgba(16, 185, 129, 0.5);
         }
 
-        /* Console Stream Box */
+        /* Console Log Stream Box */
         .console-box {
             background: var(--card-header-bg);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -238,6 +260,7 @@
             overflow-y: auto;
             line-height: 1.8;
             font-size: 0.92rem;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.5);
         }
 
         .console-entry {
@@ -248,10 +271,10 @@
 
         @keyframes fadeIn { to { opacity: 1; } }
 
-        /* Metrics Grid */
+        /* Metrics & Score Cards */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 22px;
             margin-bottom: 35px;
         }
@@ -265,6 +288,12 @@
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
         }
 
         .metric-card::before {
@@ -275,6 +304,7 @@
             width: 100%;
             height: 5px;
             background: var(--gradient-accent);
+            box-shadow: 0 2px 8px rgba(224, 64, 251, 0.4);
         }
 
         .metric-card h3 {
@@ -284,12 +314,41 @@
             font-weight: 700;
         }
 
+        .score-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
         .score {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             color: var(--neon-cyan);
             line-height: 1;
-            margin-bottom: 12px;
+            text-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+        }
+
+        .btn-why {
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--neon-cyan);
+            border: 1px solid rgba(0, 210, 255, 0.4);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-why:hover {
+            background: var(--neon-cyan);
+            color: #000;
         }
 
         .risk-badge {
@@ -313,7 +372,7 @@
             width: 100%;
         }
 
-        /* Policy & Technical Gap Cards */
+        /* Gaps & Evidence Cards */
         .gap-card {
             background-color: var(--card-inner);
             border-left: 5px solid var(--risk-critical);
@@ -339,13 +398,6 @@
             justify-content: space-between;
         }
 
-        .gap-card p {
-            margin: 0 0 14px 0;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #cbd5e1;
-        }
-
         .gap-actions {
             display: flex;
             gap: 10px;
@@ -353,7 +405,7 @@
             margin-top: 14px;
         }
 
-        /* Modal Overlay for Evidence & Why? */
+        /* Modal Overlay */
         .modal {
             display: none;
             position: fixed;
@@ -369,7 +421,7 @@
         }
 
         .modal-content {
-            background: var(--card-inner);
+            background: var(--panel-outer);
             border: 1px solid var(--neon-cyan);
             width: 90%;
             max-width: 650px;
@@ -402,13 +454,13 @@
             cursor: pointer;
         }
 
-        /* Remediation Visualizing Before / After */
+        /* Before / After Architecture Remediation Block */
         .remediation-box {
             display: none;
             background: var(--card-header-bg);
             border-radius: 14px;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 22px;
+            margin-top: 25px;
             border: 1px solid var(--neon-cyan);
         }
 
@@ -431,7 +483,7 @@
         .flow-card.before { border: 1px dashed var(--risk-critical); }
         .flow-card.after { border: 1px solid var(--risk-low); }
 
-        /* Matrix Table */
+        /* Table Styling */
         .table-responsive {
             overflow-x: auto;
             border-radius: 14px;
@@ -463,13 +515,13 @@
             font-weight: 600;
         }
 
-        /* Executive Summary & Audit History */
         .executive-summary {
             background: var(--card-inner);
             border-left: 5px solid var(--neon-cyan);
             padding: 24px;
             border-radius: 14px;
             margin-top: 32px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
         }
 
         .executive-summary h3 {
@@ -496,13 +548,22 @@
             border: 1px solid rgba(255,255,255,0.08);
         }
 
-        /* Printable Area Custom Styling */
+        .audit-id-badge {
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--neon-cyan);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 210, 255, 0.3);
+        }
+
         @media print {
             body { background: #fff; color: #000; padding: 0; }
             .container { max-width: 100%; }
             .panel, header { background: #fff; color: #000; box-shadow: none; border: 1px solid #ccc; }
-            .btn-primary, .btn-secondary, .btn-ai-fix, select, .preset-container, #loader { display: none !important; }
-            h1, h2, h3, h4, .score, .sim-framework-title { color: #000 !important; }
+            .btn-primary, .btn-secondary, .btn-ai-fix, select, #loader, .btn-why { display: none !important; }
+            h1, h2, h3, h4, .score { color: #000 !important; }
             .gap-card { background: #f9f9f9; border: 1px solid #ccc; color: #000; }
             .metric-card { background: #f4f4f4; border: 1px solid #ccc; }
             .metric-card h3, .metric-card .score { color: #000 !important; }
@@ -511,200 +572,187 @@
 </head>
 <body>
     <div class="container">
-        <!-- Main Header -->
+        <!-- Modern Header Framing as Concept Innovation Project -->
         <header>
-            <div class="saudi-badge">🇸🇦 Saudi AI Regulatory Intelligence Platform</div>
+            <div class="saudi-badge">🇸🇦 Saudi AI Readiness Hackathon Innovation Concept</div>
             <h1>ThaQeb-AI</h1>
             <div class="tagline">AI-Powered Regulatory Compliance & Risk Auditor</div>
-            <div class="sub-tagline">Detect regulatory gaps before they become business risks. Built specifically for Saudi financial institutions (SAMA CSF, SDAIA PDPL, and ITU-T Y.3172 compliance).</div>
+            <div class="hero-pillars">
+                <span class="pillar-tag">Detect</span>
+                <span class="pillar-tag">Explain</span>
+                <span class="pillar-tag">Remediate</span>
+            </div>
+            <div class="sub-tagline">
+                ThaQeb-AI is an innovative project concept designed to help Saudi financial institutions assess AI systems against regulatory, privacy, cybersecurity, and AI governance requirements — turning compliance gaps into actionable remediation steps.
+            </div>
         </header>
 
         <main>
-            <!-- Panel 1: Use Case Selection -->
+            <!-- Form Section -->
             <section class="panel">
-                <h2>1. Select System Architecture for Inspection</h2>
+                <h2>AI System Assessment Scenario</h2>
                 <div class="form-group">
-                    <label for="scenarioSelect">Choose Banking AI Deployment Scenario:</label>
+                    <label for="scenarioSelect">Select an AI Deployment Scenario:</label>
                     <select id="scenarioSelect">
-                        <option value="">-- Select Deployment Scenario --</option>
-                        <option value="scenario1">Scenario 1: SARIE Integrated Cross-Bank AML (Compliant FL Architecture)</option>
+                        <option value="">-- Choose a real-world AI scenario to assess --</option>
+                        <option value="scenario1">Scenario 1: Cross-Bank Fraud & AML Detection System (Compliant FL Architecture)</option>
                         <option value="scenario2">Scenario 2: Multi-Bank Federated Learning with Network Dropout Resilience</option>
                         <option value="scenario3">Scenario 3: Parameter Broadcast Without Differential Privacy (Critical Leakage Risk)</option>
                     </select>
                 </div>
-                <button id="startBtn" class="btn-primary" type="button" onclick="runRegulatoryAudit()">🚀 Launch AI Compliance & Risk Audit</button>
+                <button id="startBtn" class="btn-primary" type="button" onclick="runRegulatoryAudit()">🚀 Run AI Compliance Audit</button>
             </section>
 
-            <!-- Console Stream Box -->
+            <!-- Regulatory Engine Log Stream -->
             <div id="loader" class="panel" style="display:none;">
-                <h2>⚡ Knowledge Vector RAG Engine & Rule Verification</h2>
+                <h2>⚡ Regulatory Knowledge Engine & Risk Mapping</h2>
                 <div id="consoleLogs" class="console-box"></div>
             </div>
 
-            <!-- Panel 2: Audit Results & Findings -->
+            <!-- Audit Report Panel -->
             <section id="reportArea" class="panel" style="display:none;">
-                <h2>📊 Comprehensive Audit & Evaluation Report</h2>
+                <h2>
+                    <span>📊 Compliance Assessment Findings</span>
+                    <span id="auditIdDisplay" class="audit-id-badge">AUDIT ID: THQ-2026-0829-1042</span>
+                </h2>
                 
-                <!-- Compliance Score Metrics -->
+                <!-- Metric Cards -->
                 <div class="metrics-grid">
                     <div class="metric-card">
-                        <h3>SAMA CSF Alignment</h3>
-                        <div id="samaScore" class="score">0%</div>
+                        <h3>SAMA Alignment</h3>
+                        <div class="score-row">
+                            <div id="samaScore" class="score">0%</div>
+                            <button class="btn-why" title="Click to view breakdown" onclick="openWhyModal('SAMA')">ⓘ</button>
+                        </div>
                         <span id="samaRisk" class="risk-badge risk-low">LOW RISK</span>
                     </div>
                     <div class="metric-card">
-                        <h3>SDAIA PDPL Compliance</h3>
-                        <div id="pdplScore" class="score">0%</div>
+                        <h3>SDAIA PDPL Privacy</h3>
+                        <div class="score-row">
+                            <div id="pdplScore" class="score">0%</div>
+                            <button class="btn-why" title="Click to view breakdown" onclick="openWhyModal('PDPL')">ⓘ</button>
+                        </div>
                         <span id="pdplRisk" class="risk-badge risk-low">LOW RISK</span>
                     </div>
                     <div class="metric-card">
                         <h3>ITU-T Y.3172 Standard</h3>
-                        <div id="ituScore" class="score">0%</div>
+                        <div class="score-row">
+                            <div id="ituScore" class="score">0%</div>
+                            <button class="btn-why" title="Click to view breakdown" onclick="openWhyModal('ITU')">ⓘ</button>
+                        </div>
                         <span id="ituRisk" class="risk-badge risk-low">LOW RISK</span>
                     </div>
                 </div>
 
-                <!-- Visual Analytics Chart Section -->
+                <!-- Visual Analytics Radar Chart -->
                 <div style="background: var(--card-inner); padding: 24px; border-radius: 16px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.08);">
-                    <h3 style="margin-top:0; color: var(--neon-cyan); font-size: 1.15rem; font-weight: 800;">📈 Multi-Framework Regulatory Coverage</h3>
+                    <h3 style="margin-top:0; color: var(--neon-cyan); font-size: 1.15rem; font-weight: 800;">📈 Multi-Framework Alignment Radar</h3>
                     <div class="chart-container">
                         <canvas id="complianceChart"></canvas>
                     </div>
                 </div>
 
-                <!-- Identified Gaps & Findings -->
-                <h3 style="margin-top: 32px; color: #f6ad55; font-size: 1.25rem; font-weight: 800;">⚠️ Identified Non-Compliance & Regulatory Vulnerabilities</h3>
-                
-                <div id="gapContainer">
-                    <!-- Dynamic Gaps Populated Here -->
-                </div>
+                <!-- Detected Gaps & Evidence -->
+                <h3 style="margin-top: 32px; color: #f6ad55; font-size: 1.25rem; font-weight: 800;">⚠️ Detected Gaps & Technical Evidence</h3>
+                <div id="gapContainer"></div>
 
-                <!-- Fix With AI Interactive Remediation Block -->
+                <!-- Fix with AI Block -->
                 <div id="remediationBlock" class="remediation-box">
-                    <h3 style="color: #4ade80; margin-top:0;">✨ AI-Generated Architecture Remediation Plan</h3>
-                    <p style="color: var(--text-body); font-size: 0.95rem;">ThaQeb-AI has synthesized an optimized compliant pipeline resolving active vulnerabilities:</p>
+                    <h3 style="color: #4ade80; margin-top:0;">✨ AI Remediation Plan</h3>
+                    <p style="color: var(--text-body); font-size: 0.95rem;">ThaQeb-AI concept engine has synthesized an optimized compliant pipeline resolving active findings:</p>
                     
                     <div class="before-after-grid">
                         <div class="flow-card before">
-                            <strong style="color: #f87171;">Before ❌ (Vulnerable Flow)</strong><br><br>
+                            <strong style="color: #f87171;">Before ❌ (Non-Compliant Flow)</strong><br><br>
                             Bank Database<br>
-                            &nbsp;&nbsp;↓ (Raw Telemetry Transmission)<br>
-                            External Model Node<br>
-                            &nbsp;&nbsp;↓ (Automated Decisioning)<br>
-                            Customer Account Suspended
+                            &nbsp;&nbsp;↓ (Raw Gradient Broadcast)<br>
+                            Automated Decision Node<br>
+                            &nbsp;&nbsp;↓ (Immediate Execution)<br>
+                            Automated Account Suspension
                         </div>
                         <div class="flow-card after">
                             <strong style="color: #4ade80;">After ✅ (Compliant Architecture)</strong><br><br>
                             Bank Database<br>
                             &nbsp;&nbsp;↓ (Local Gradient + DP-SGD Noise)<br>
-                            Secure Privacy Enforcement Layer<br>
-                            &nbsp;&nbsp;↓ (Alert Notification)<br>
-                            Human Officer Review (SAMA Art 15)
+                            Privacy Enforcement Layer<br>
+                            &nbsp;&nbsp;↓ (Compliance Officer Alert)<br>
+                            Human Review Approval Gate
                         </div>
                     </div>
                     <div style="margin-top: 15px; font-weight: 700; color: var(--neon-cyan);">
-                        Expected Post-Remediation Compliance Score: <span style="color:#4ade80; font-size: 1.3rem;">94% (+52% Improvement)</span>
+                        Post-Remediation Compliance Posture: <span style="color:#4ade80; font-size: 1.3rem;">94% — LOW RISK (+54% Improvement)</span>
                     </div>
                 </div>
 
-                <!-- Structural Matrix Table -->
-                <h3 style="margin-top: 38px; color: var(--neon-cyan); font-size: 1.25rem; font-weight: 800;">📐 ITU-T Y.3172 Component Verification Matrix</h3>
+                <!-- Risk Matrix Table -->
+                <h3 style="margin-top: 38px; color: var(--neon-cyan); font-size: 1.25rem; font-weight: 800;">📐 Framework Overall Risk Matrix</h3>
                 <div class="table-responsive">
                     <table class="y3172-table">
                         <thead>
                             <tr>
-                                <th>Component</th>
-                                <th>Symbol</th>
-                                <th>Role</th>
+                                <th>Framework</th>
+                                <th>Score</th>
+                                <th>Risk Level</th>
+                                <th>Active Findings</th>
                                 <th>Status</th>
-                                <th>Audit Action</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Data Source Node</td>
-                                <td><span style="color:#60a5fa; font-weight:bold;">SRC</span></td>
-                                <td>Local Bank Databases</td>
-                                <td><span style="color:#4ade80;">🟢 Compliant</span></td>
-                                <td><button class="btn-secondary" onclick="openModal('SRC Evidence', 'SDAIA PDPL Article 4', 'Personal customer PII remains localized within Saudi regional infrastructure with zero raw database exports.')">View Evidence</button></td>
-                            </tr>
-                            <tr>
-                                <td>Noise Injection Engine</td>
-                                <td><span style="color:#e879f9; font-weight:bold;">PP</span></td>
-                                <td>Differential Privacy Module</td>
-                                <td><span id="ppStatus" style="color:#4ade80;">🟢 Compliant</span></td>
-                                <td><button class="btn-secondary" onclick="openModal('PP Engine Evidence', 'SAMA Cyber Security Framework Sec 3.2', 'Verifies DP-SGD parameter noise injection preventing reverse reconstruction attacks.')">View Evidence</button></td>
-                            </tr>
-                            <tr>
-                                <td>Model Sink / Action Engine</td>
-                                <td><span style="color:#38bdf8; font-weight:bold;">SINK</span></td>
-                                <td>Alert & Enforcement Gate</td>
-                                <td><span style="color:#f87171;">🔴 Action Required</span></td>
-                                <td><button class="btn-secondary" onclick="openModal('SINK Gate Failure', 'SAMA AML Rule Directive Art 15', 'Automated decisioning overrides human review required for freeze operations.')">View Evidence</button></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="matrixTableBody"></tbody>
                     </table>
                 </div>
 
                 <!-- Executive Summary -->
                 <div class="executive-summary">
-                    <h3>📌 Executive Recommendation Summary</h3>
-                    <p id="execSummaryText">Pending audit execution...</p>
+                    <h3>📌 Executive Summary</h3>
+                    <p id="execSummaryText">Pending assessment execution...</p>
                 </div>
 
                 <!-- Action Bar -->
                 <div class="action-bar" style="margin-top: 25px; display: flex; gap: 12px; justify-content: flex-end;">
-                    <button class="btn-secondary" type="button" onclick="triggerAIRemediation()">✨ Fix With AI (Auto-Remediate)</button>
-                    <button class="btn-primary" type="button" onclick="window.print()" style="width: auto;">🖨️ Generate Official Audit Report (PDF)</button>
+                    <button class="btn-secondary" type="button" onclick="triggerAIRemediation()">✨ Fix with AI (Auto-Remediate)</button>
+                    <button class="btn-primary" type="button" onclick="window.print()" style="width: auto;">📄 Generate Regulatory Audit Report</button>
                 </div>
             </section>
 
-            <!-- Audit History Log Section -->
+            <!-- Audit History Log -->
             <section class="panel">
-                <h2>📜 Organization Audit History & Tracked Improvements</h2>
+                <h2>📜 Concept Execution Log History</h2>
                 <div class="history-list">
                     <div class="history-item">
                         <div>
-                            <strong style="color: var(--text-white);">AUDIT #10483 (Post-Remediation)</strong>
-                            <div style="color: var(--text-muted); font-size: 0.85rem;">System: SARIE Fraud Classifier • Aug 28, 2026</div>
+                            <strong style="color: var(--text-white);">AUDIT #THQ-2026-0829-1042 (Current)</strong>
+                            <div style="color: var(--text-muted); font-size: 0.85rem;">System: Cross-Bank Fraud Detection • Aug 29, 2026</div>
                         </div>
                         <div style="text-align: right;">
-                            <span class="score" style="font-size: 1.4rem; color: #4ade80;">94%</span>
-                            <span class="risk-badge risk-low" style="margin-left: 8px;">LOW RISK</span>
+                            <span class="score" style="font-size: 1.3rem; color: #4ade80;">88%</span>
+                            <span class="risk-badge risk-medium" style="margin-left: 8px;">MEDIUM RISK</span>
                         </div>
                     </div>
                     <div class="history-item">
                         <div>
-                            <strong style="color: var(--text-white);">AUDIT #10482 (Initial Baseline)</strong>
+                            <strong style="color: var(--text-white);">AUDIT #THQ-2026-0820-0911 (Baseline)</strong>
                             <div style="color: var(--text-muted); font-size: 0.85rem;">System: Core FL Gradient Engine • Aug 20, 2026</div>
                         </div>
                         <div style="text-align: right;">
-                            <span class="score" style="font-size: 1.4rem; color: #f87171;">42%</span>
+                            <span class="score" style="font-size: 1.3rem; color: #f87171;">40%</span>
                             <span class="risk-badge risk-critical" style="margin-left: 8px;">CRITICAL RISK</span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Real-Time Contextual AI Policy Simulator -->
+            <!-- Policy Sandbox -->
             <section class="panel">
-                <h2>⚡ Contextual AI Policy Analyzer</h2>
-                <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 0.98rem;">Paste any unstructured system architecture description or custom policy snippet for instant NLP-driven evaluation against Saudi regulations:</p>
-                
-                <div class="preset-container">
-                    <span class="preset-label">Sample Architecture Inputs:</span>
-                    <button class="btn-secondary" type="button" onclick="loadSamplePolicy(1)">❌ Voice Data & Unencrypted Storage</button>
-                    <button class="btn-secondary" type="button" onclick="loadSamplePolicy(2)">✅ Encrypted DP-SGD Gradient Flow</button>
-                </div>
+                <h2>⚡ Interactive Regulatory Policy Sandbox</h2>
+                <p style="color: #cbd5e1; margin-bottom: 20px; font-size: 0.98rem;">Evaluate custom unstructured architecture descriptions against regulatory controls:</p>
 
-                <div class="form-group" style="margin-top: 15px;">
-                    <textarea id="customPolicyInput" rows="3" placeholder="Paste custom architecture text (e.g., 'The bank stores raw biometric data on external cloud servers without explicit user consent for 5 years...')"></textarea>
+                <div class="form-group">
+                    <textarea id="customPolicyInput" rows="3" placeholder="Paste custom architecture description (e.g., 'The system triggers automated account freezes based on AI fraud scoring without human intervention...')"></textarea>
                 </div>
-                <button class="btn-primary" type="button" onclick="simulateCustomPolicy()" style="width: auto; padding: 14px 28px;">🧠 Run Contextual AI Analysis</button>
+                <button class="btn-primary" type="button" onclick="simulateCustomPolicy()" style="width: auto; padding: 14px 28px;">🧠 Evaluate Architecture Policy</button>
 
-                <!-- Result Box Structure -->
-                <div id="simulatorResult" class="simulator-card" style="display:none; margin-top: 24px; padding: 22px; background: var(--card-header-bg); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);">
-                    <div class="simulator-header" style="margin-bottom: 12px;">
+                <div id="simulatorResult" style="display:none; margin-top: 24px; padding: 22px; background: var(--card-header-bg); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12);">
+                    <div style="margin-bottom: 12px;">
                         <span id="simStatusBadge" class="risk-badge"></span>
                         <div id="simFramework" style="color: var(--neon-cyan); font-weight: 800; font-size: 1.1rem; margin-top: 8px;"></div>
                     </div>
@@ -715,7 +763,7 @@
         </main>
     </div>
 
-    <!-- Modal Box for Evidence & Why Details -->
+    <!-- Modal Box -->
     <div id="evidenceModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -727,20 +775,80 @@
                 <div style="background: rgba(0,0,0,0.3); padding: 14px; border-radius: 8px; border-left: 3px solid var(--neon-cyan); margin: 15px 0;">
                     <span id="modalBody"></span>
                 </div>
-                <p><strong style="color: #4ade80;">Suggested Remediation Action:</strong><br>Implement automated validation gates before broadcasting outputs outside the local sandbox container.</p>
+                <p><strong style="color: #4ade80;">Actionable Recommendation:</strong><br><span id="modalRec">Implement automated validation gates before broadcasting outputs.</span></p>
             </div>
         </div>
     </div>
 
-    <!-- Logic Script -->
+    <!-- Script Logic Implementation -->
     <script>
+        const scenarioDatabase = {
+            scenario1: {
+                sama: 88,
+                pdpl: 90,
+                itu: 85,
+                auditId: "THQ-2026-0829-1042",
+                summary: "MEDIUM RISK: Federated AML architecture demonstrates high privacy compliance, but requires human oversight clearance before automated account actions.",
+                gaps: [
+                    {
+                        title: "Automated Account Suspension Gate",
+                        risk: "HIGH",
+                        riskClass: "risk-high",
+                        evidence: "SINK → Automated Account Freeze triggered directly by ML score threshold without prior compliance officer authorization.",
+                        recommendation: "Route suspicious alerts to a compliance officer review gate prior to executing restrictive financial actions.",
+                        framework: "SAMA Cybersecurity Framework",
+                        control: "Automated Decision Controls"
+                    }
+                ]
+            },
+            scenario2: {
+                sama: 85,
+                pdpl: 88,
+                itu: 75,
+                auditId: "THQ-2026-0829-1043",
+                summary: "MEDIUM RISK: Node dropout resilience verified under ITU-T Y.3172 guidelines, but packet latency creates dynamic weight synchronization jitter.",
+                gaps: [
+                    {
+                        title: "Network Dropout Recovery Latency",
+                        risk: "MEDIUM",
+                        riskClass: "risk-medium",
+                        evidence: "High packet latency across remote banking nodes leads to partial gradient dropped states during training aggregation.",
+                        recommendation: "Implement dynamic parameter compensation to handle asynchronous node updates safely.",
+                        framework: "ITU-T Y.3172 Standards",
+                        control: "Pipeline Orchestration Control"
+                    }
+                ]
+            },
+            scenario3: {
+                sama: 40,
+                pdpl: 25,
+                itu: 60,
+                auditId: "THQ-2026-0829-1044",
+                summary: "CRITICAL RISK: Absence of Differential Privacy exposes raw gradient parameters to potential reverse-reconstruction attacks.",
+                gaps: [
+                    {
+                        title: "Unencrypted Gradient Parameter Exposure",
+                        risk: "CRITICAL",
+                        riskClass: "risk-critical",
+                        evidence: "Model weights are transmitted directly across participating nodes without DP-SGD noise addition.",
+                        recommendation: "Applies Differential Privacy (DP-SGD) to reduce exposure of sensitive customer information during model aggregation.",
+                        framework: "SDAIA PDPL Privacy Directives",
+                        control: "Data Sovereignty & Encryption"
+                    }
+                ]
+            }
+        };
+
+        let currentScenarioKey = 'scenario1';
+
         function runRegulatoryAudit() {
             const scenario = document.getElementById('scenarioSelect').value;
             if (!scenario) {
-                alert('Please select a scenario first!');
+                alert('Please select an AI Deployment Scenario first!');
                 return;
             }
 
+            currentScenarioKey = scenario;
             const loader = document.getElementById('loader');
             const consoleBox = document.getElementById('consoleLogs');
             const reportArea = document.getElementById('reportArea');
@@ -751,13 +859,13 @@
             consoleBox.innerHTML = '';
 
             const logs = [
-                ' Initiating RAG Pipeline & Knowledge Vector Search against Saudi Frameworks...',
-                ' Connecting to SAMA Cyber Security Framework (CSF) v3.2 Regulation Nodes...',
-                ' Executing SDAIA Personal Data Protection Law (PDPL) Data Sovereignty Check...',
-                ' Parsing ITU-T Y.3172 Machine Learning Architectural Pipeline Specifications...',
-                ' Calculating Differential Privacy Noise Guarantees (ε, δ) & Gradient Exposure...',
-                ' Synthesizing Executive Remediation Vectors & Risk Matrix...',
-                ' Audit Analysis Complete. Generating Interactive Assessment Dashboard...'
+                ' Initiating Regulatory Knowledge Engine & Risk Control Search...',
+                ' Connecting to SAMA Cybersecurity Framework Control Rules...',
+                ' Evaluating SDAIA Personal Data Protection Law (PDPL) Control Requirements...',
+                ' Mapping Architecture Against ITU-T Y.3172 ML Pipeline Controls...',
+                ' Evaluating Differential Privacy Risk Parameters (DP-SGD Noise Levels)...',
+                ' Generating Audit Finding Citations & Actionable Recommendations...',
+                ' Assessment Complete. Rendering Comprehensive Compliance Dashboard...'
             ];
 
             let step = 0;
@@ -775,85 +883,107 @@
                         loader.style.display = 'none';
                         reportArea.style.display = 'block';
                         populateReportResults(scenario);
-                    }, 500);
+                    }, 400);
                 }
-            }, 400);
+            }, 350);
         }
 
-        function populateReportResults(scenario) {
-            let sama = 95, pdpl = 92, itu = 98;
-            let summary = '';
+        function populateReportResults(scenarioKey) {
+            const data = scenarioDatabase[scenarioKey];
+            document.getElementById('auditIdDisplay').innerText = `AUDIT ID: ${data.auditId}`;
+            
+            document.getElementById('samaScore').innerText = `${data.sama}%`;
+            document.getElementById('pdplScore').innerText = `${data.pdpl}%`;
+            document.getElementById('ituScore').innerText = `${data.itu}%`;
+            
+            updateRiskBadge('samaRisk', data.sama);
+            updateRiskBadge('pdplRisk', data.pdpl);
+            updateRiskBadge('ituRisk', data.itu);
+
+            document.getElementById('execSummaryText').innerText = data.summary;
+
             const gapContainer = document.getElementById('gapContainer');
             gapContainer.innerHTML = '';
 
-            if (scenario === 'scenario3') {
-                sama = 40; pdpl = 25; itu = 60;
-                summary = 'CRITICAL WARNING: Absence of Differential Privacy exposes gradient parameter leakage, violating SDAIA PDPL Data Sovereignty mandates and SAMA Privacy Directives.';
-                
-                updateRiskBadge('samaRisk', 'CRITICAL RISK', 'risk-critical');
-                updateRiskBadge('pdplRisk', 'CRITICAL RISK', 'risk-critical');
-                updateRiskBadge('ituRisk', 'HIGH RISK', 'risk-high');
-
-                gapContainer.innerHTML = `
-                    <div class="gap-card">
-                        <h4>🔴 Gradient Leakage & Unencrypted Transmission <span class="risk-badge risk-critical">CRITICAL</span></h4>
-                        <p>Model weights are transmitted directly across participating nodes without DP-SGD noise addition, allowing potential reverse-reconstruction of raw PII financial records.</p>
-                        <div class="gap-actions">
-                            <button class="btn-secondary" onclick="openModal('Gradient Exposure Details', 'SDAIA PDPL Executive Regulations Section 10', 'Direct mathematical extraction of customer PII is possible from raw weight matrices when Differential Privacy parameters are omitted.')">Why 25% Score?</button>
-                            <button class="btn-secondary" onclick="openModal('Audit Evidence Evidence #884', 'SAMA CSF Cybersecurity Controls 3.2.1', 'Interception of internal weight updates violates mandatory encryption-at-transit standards.')">View Regulatory Evidence</button>
-                            <button class="btn-ai-fix" onclick="triggerAIRemediation()">✨ Fix With AI</button>
-                        </div>
+            data.gaps.forEach(gap => {
+                const card = document.createElement('div');
+                card.className = 'gap-card';
+                card.innerHTML = `
+                    <h4>
+                        <span>🔴 ${gap.title}</span>
+                        <span class="risk-badge ${gap.riskClass}">${gap.risk} RISK</span>
+                    </h4>
+                    <p style="margin-bottom: 8px;"><strong style="color:var(--neon-cyan);">Framework:</strong> ${gap.framework} (${gap.control})</p>
+                    <p><strong style="color:var(--text-white);">Detected Evidence:</strong> ${gap.evidence}</p>
+                    <p><strong style="color:#4ade80;">Recommended Remediation:</strong> ${gap.recommendation}</p>
+                    <div class="gap-actions">
+                        <button class="btn-secondary" onclick="openModal('${gap.title}', '${gap.framework}', '${gap.evidence}', '${gap.recommendation}')">🔍 View Evidence</button>
+                        <button class="btn-ai-fix" onclick="triggerAIRemediation()">✨ Fix with AI</button>
                     </div>
                 `;
-            } else if (scenario === 'scenario2') {
-                sama = 85; pdpl = 88; itu = 75;
-                summary = 'MODERATE ALIGNMENT: Dropout resilience verified. Dynamic weight re-adjustment maintains functional integrity under ITU-T Y.3172 standards.';
-                
-                updateRiskBadge('samaRisk', 'LOW RISK', 'risk-low');
-                updateRiskBadge('pdplRisk', 'LOW RISK', 'risk-low');
-                updateRiskBadge('ituRisk', 'MEDIUM RISK', 'risk-medium');
+                gapContainer.appendChild(card);
+            });
 
-                gapContainer.innerHTML = `
-                    <div class="gap-card" style="border-left-color: var(--risk-medium);">
-                        <h4>🟡 Network Dropout Recovery Synchronization <span class="risk-badge risk-medium">MEDIUM RISK</span></h4>
-                        <p>High packet latency across remote banking nodes leads to partial gradient dropped states, temporarily lowering ITU-T Y.3172 orchestration score.</p>
-                        <div class="gap-actions">
-                            <button class="btn-secondary" onclick="openModal('Dropout Latency Analysis', 'ITU-T Y.3172 Architecture Guidelines', 'Node dropouts during federated sync cycles create temporary accuracy degradation across aggregated models.')">Why 75% Score?</button>
-                            <button class="btn-secondary" onclick="openModal('Sync Telemetry Log', 'SAMA Technical Infrastructure Standards', 'High latency jitter observed on third-party node aggregation endpoints.')">View Regulatory Evidence</button>
-                        </div>
-                    </div>
-                `;
-            } else {
-                sama = 98; pdpl = 95; itu = 96;
-                summary = 'FULL COMPLIANCE: Architecture satisfies SAMA Cyber Security Sandbox rules, ITU-T Y.3172 federated standards, and SARIE operational data privacy mandates.';
-                
-                updateRiskBadge('samaRisk', 'LOW RISK', 'risk-low');
-                updateRiskBadge('pdplRisk', 'LOW RISK', 'risk-low');
-                updateRiskBadge('ituRisk', 'LOW RISK', 'risk-low');
-
-                gapContainer.innerHTML = `
-                    <div class="gap-card compliant">
-                        <h4>🟢 Fully Compliant Federated Architecture <span class="risk-badge risk-low">PASS</span></h4>
-                        <p>Local data nodes apply DP-SGD noise (ε=0.5, δ=1e-5). All parameters passed via SARIE encrypted channels with mandatory Human-in-the-Loop clearance.</p>
-                        <div class="gap-actions">
-                            <button class="btn-secondary" onclick="openModal('Compliance Summary', 'SAMA CSF / SDAIA PDPL Combined Approval', 'Full mathematical compliance verified across all target regulatory control frameworks.')">View Regulatory Evidence</button>
-                        </div>
-                    </div>
-                `;
-            }
-
-            document.getElementById('samaScore').innerText = `${sama}%`;
-            document.getElementById('pdplScore').innerText = `${pdpl}%`;
-            document.getElementById('ituScore').innerText = `${itu}%`;
-            document.getElementById('execSummaryText').innerText = summary;
-
-            renderAuditChart(sama, pdpl, itu);
+            populateMatrixTable(data);
+            renderAuditChart(data.sama, data.pdpl, data.itu);
         }
 
-        function updateRiskBadge(id, text, className) {
+        function updateRiskBadge(id, score) {
             const el = document.getElementById(id);
-            el.innerText = text;
-            el.className = `risk-badge ${className}`;
+            if (score >= 90) {
+                el.innerText = 'LOW RISK';
+                el.className = 'risk-badge risk-low';
+            } else if (score >= 75) {
+                el.innerText = 'MEDIUM RISK';
+                el.className = 'risk-badge risk-medium';
+            } else if (score >= 50) {
+                el.innerText = 'HIGH RISK';
+                el.className = 'risk-badge risk-high';
+            } else {
+                el.innerText = 'CRITICAL RISK';
+                el.className = 'risk-badge risk-critical';
+            }
+        }
+
+        function populateMatrixTable(data) {
+            const tbody = document.getElementById('matrixTableBody');
+            tbody.innerHTML = `
+                <tr>
+                    <td><strong>SAMA Cybersecurity Framework</strong></td>
+                    <td>${data.sama}%</td>
+                    <td><span class="risk-badge ${getRiskClass(data.sama)}">${getRiskLabel(data.sama)}</span></td>
+                    <td>${data.sama < 90 ? '1 Finding' : '0 Findings'}</td>
+                    <td>${data.sama >= 85 ? '<span style="color:#4ade80;">🟢 Compliant</span>' : '<span style="color:#f87171;">🔴 Action Required</span>'}</td>
+                </tr>
+                <tr>
+                    <td><strong>SDAIA PDPL Privacy Directives</strong></td>
+                    <td>${data.pdpl}%</td>
+                    <td><span class="risk-badge ${getRiskClass(data.pdpl)}">${getRiskLabel(data.pdpl)}</span></td>
+                    <td>${data.pdpl < 90 ? '1 Finding' : '0 Findings'}</td>
+                    <td>${data.pdpl >= 85 ? '<span style="color:#4ade80;">🟢 Compliant</span>' : '<span style="color:#f87171;">🔴 Action Required</span>'}</td>
+                </tr>
+                <tr>
+                    <td><strong>ITU-T Y.3172 Standards</strong></td>
+                    <td>${data.itu}%</td>
+                    <td><span class="risk-badge ${getRiskClass(data.itu)}">${getRiskLabel(data.itu)}</span></td>
+                    <td>${data.itu < 90 ? '1 Finding' : '0 Findings'}</td>
+                    <td>${data.itu >= 85 ? '<span style="color:#4ade80;">🟢 Compliant</span>' : '<span style="color:#eab308;">🟡 Partial Compliance</span>'}</td>
+                </tr>
+            `;
+        }
+
+        function getRiskClass(score) {
+            if (score >= 90) return 'risk-low';
+            if (score >= 75) return 'risk-medium';
+            if (score >= 50) return 'risk-high';
+            return 'risk-critical';
+        }
+
+        function getRiskLabel(score) {
+            if (score >= 90) return 'LOW';
+            if (score >= 75) return 'MEDIUM';
+            if (score >= 50) return 'HIGH';
+            return 'CRITICAL';
         }
 
         function triggerAIRemediation() {
@@ -865,13 +995,42 @@
             document.getElementById('pdplScore').innerText = '92%';
             document.getElementById('ituScore').innerText = '96%';
             
-            updateRiskBadge('samaRisk', 'LOW RISK', 'risk-low');
-            updateRiskBadge('pdplRisk', 'LOW RISK', 'risk-low');
-            updateRiskBadge('ituRisk', 'LOW RISK', 'risk-low');
+            updateRiskBadge('samaRisk', 94);
+            updateRiskBadge('pdplRisk', 92);
+            updateRiskBadge('ituRisk', 96);
             
-            document.getElementById('execSummaryText').innerText = 'REMEDIATED COMPLIANCE: AI Auto-remediation inserted DP-SGD noise modules and enforced SAMA Article 15 Human Clearance Gates. System score elevated to 94%.';
+            document.getElementById('execSummaryText').innerText = 'REMEDIATED COMPLIANCE: AI Auto-remediation inserted DP-SGD noise modules and enforced mandatory Human Clearance Review Gates before restrictive financial actions. Overall risk reduced to LOW.';
             
+            const gapContainer = document.getElementById('gapContainer');
+            gapContainer.innerHTML = `
+                <div class="gap-card compliant">
+                    <h4>🟢 Remediated Architecture <span class="risk-badge risk-low">PASS</span></h4>
+                    <p>Compliance gaps successfully resolved via automated human review integration and Differential Privacy enforcement.</p>
+                </div>
+            `;
+
             renderAuditChart(94, 92, 96);
+        }
+
+        function openWhyModal(frameworkType) {
+            let title = "", framework = "", body = "", rec = "";
+            if (frameworkType === 'SAMA') {
+                title = "Why SAMA Score breakdown?";
+                framework = "SAMA Cybersecurity Framework";
+                body = "✓ Human oversight controls checked\n✓ Federated architecture verified\n⚠ Automated account action without compliance approval detected (1 High-Risk Finding)";
+                rec = "Introduce human approval step prior to financial action execution.";
+            } else if (frameworkType === 'PDPL') {
+                title = "Why SDAIA PDPL Score breakdown?";
+                framework = "SDAIA Personal Data Protection Law";
+                body = "✓ PII Data localization verified inside KSA\n✓ Encrypted transport layer verified\n⚠ Parameter differential privacy noise margin evaluated";
+                rec = "Applies Differential Privacy to reduce exposure of sensitive information during model training.";
+            } else {
+                title = "Why ITU-T Y.3172 Score breakdown?";
+                framework = "ITU-T Y.3172 Architectural Framework";
+                body = "✓ Data Source (SRC) Node registered\n✓ Machine Learning Model Orchestration active\n⚠ Model Sink action gate requires human intervention layer";
+                rec = "Configure Sink node output filters for manual review clearance.";
+            }
+            openModal(title, framework, body, rec);
         }
 
         let myChart = null;
@@ -882,9 +1041,9 @@
             myChart = new Chart(ctx, {
                 type: 'radar',
                 data: {
-                    labels: ['SAMA CSF Alignment', 'SDAIA PDPL Privacy', 'ITU-T Y.3172 Standard', 'DP Noise Encryption', 'Human-in-Loop Gate'],
+                    labels: ['SAMA Alignment', 'SDAIA PDPL Privacy', 'ITU-T Y.3172 Standard', 'DP Noise Protection', 'Human Oversight Gate'],
                     datasets: [{
-                        label: 'Audit Assessment Score (%)',
+                        label: 'Compliance Posture (%)',
                         data: [sama, pdpl, itu, Math.round((sama + pdpl) / 2), sama > 80 ? 95 : 40],
                         backgroundColor: 'rgba(0, 210, 255, 0.25)',
                         borderColor: '#00d2ff',
@@ -911,10 +1070,11 @@
             });
         }
 
-        function openModal(title, framework, body) {
+        function openModal(title, framework, body, rec) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalFramework').innerText = framework;
             document.getElementById('modalBody').innerText = body;
+            document.getElementById('modalRec').innerText = rec || 'Implement suggested remediation steps.';
             document.getElementById('evidenceModal').style.display = 'flex';
         }
 
@@ -922,16 +1082,6 @@
             document.getElementById('evidenceModal').style.display = 'none';
         }
 
-        function loadSamplePolicy(type) {
-            const input = document.getElementById('customPolicyInput');
-            if (type === 1) {
-                input.value = "The bank captures customer voice recordings for authentication and stores unencrypted biometric audio files on external third-party cloud servers without prior explicit consent for 5 years.";
-            } else if (type === 2) {
-                input.value = "Local bank nodes execute differential privacy (DP-SGD, epsilon=0.5) to encrypt parameters before broadcasting weights across SARIE inter-bank verification network channels.";
-            }
-        }
-
-        /* Contextual Concept-Based AI Simulator (Not Simple Keyword Match) */
         function simulateCustomPolicy() {
             const text = document.getElementById('customPolicyInput').value.trim();
             const resultDiv = document.getElementById('simulatorResult');
@@ -941,29 +1091,26 @@
             const rec = document.getElementById('simRecommendation');
 
             if (!text) {
-                alert("Please paste architectural text to evaluate.");
+                alert("Please paste an architecture description to evaluate.");
                 return;
             }
 
             resultDiv.style.display = 'block';
-
-            // Advanced Multi-Concept NLP Matching
             const lowerText = text.toLowerCase();
-            const isPrivacyRisk = lowerText.includes("unencrypted") || lowerText.includes("voice") || lowerText.includes("biometric") || lowerText.includes("third-party") || lowerText.includes("without consent") || lowerText.includes("store");
-            const isCompliantFL = lowerText.includes("differential privacy") || lowerText.includes("dp-sgd") || lowerText.includes("encrypted") || lowerText.includes("local bank nodes");
+            const isRisk = lowerText.includes("automated") || lowerText.includes("unencrypted") || lowerText.includes("freeze") || lowerText.includes("without intervention");
 
-            if (isPrivacyRisk && !isCompliantFL) {
-                badge.className = "risk-badge risk-critical";
-                badge.innerText = "CRITICAL VIOLATION DETECTED";
-                framework.innerText = "SDAIA PDPL (Art. 4 & 10) / SAMA CSF Security Standards";
-                details.innerText = "Context Extraction Result: Storing sensitive biometric telemetry or transmitting unencrypted data to external non-certified servers without user consent breaches fundamental Saudi data sovereignty laws.";
-                rec.innerText = "💡 Recommended Fix: Localize biometric processing to internal SRC nodes and enforce DP-SGD obfuscation prior to cloud sync.";
+            if (isRisk) {
+                badge.className = "risk-badge risk-high";
+                badge.innerText = "HIGH RISK FINDING";
+                framework.innerText = "SAMA Cybersecurity Framework / SDAIA PDPL";
+                details.innerText = "Detected Finding: Automated execution of account freeze actions without human clearance breaches SAMA automated decisioning governance requirements.";
+                rec.innerText = "💡 Recommended Fix: Require compliance officer review before executing restrictive financial actions.";
             } else {
                 badge.className = "risk-badge risk-low";
                 badge.innerText = "COMPLIANT ARCHITECTURE";
-                framework.innerText = "SAMA Cyber Security Framework / ITU-T Y.3172 Standard";
-                details.innerText = "Context Extraction Result: Architecture successfully isolates customer PII locally and applies robust differential privacy parameter masking prior to network transmission.";
-                rec.innerText = "💡 Action Status: Approved for deployment inside SAMA FinTech Sandbox environment.";
+                framework.innerText = "SAMA / SDAIA PDPL / ITU-T Y.3172";
+                details.innerText = "Detected Finding: Architecture enforces proper human oversight and applies privacy protection mechanisms locally.";
+                rec.innerText = "💡 Action Status: Approved for deployment readiness.";
             }
         }
     </script>
